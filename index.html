@@ -20,6 +20,7 @@
             background: linear-gradient(135deg, #f8f9fc 0%, #f0f4fa 100%);
             color: #1a2c3e;
             line-height: 1.5;
+            font-size: 16px; /* Base font size for better readability */
         }
         .container {
             max-width: 1280px;
@@ -101,6 +102,8 @@
             font-weight: 600;
             color: #2c4e6e;
             transition: 0.3s;
+            padding: 8px 0;
+            display: inline-block;
         }
         .nav-links a:hover {
             color: #e67e22;
@@ -210,6 +213,7 @@
             font-size: 1rem;
             color: #2c4e6e;
             font-weight: 500;
+            flex-wrap: wrap;
         }
         .hero-contact i {
             width: 30px;
@@ -221,6 +225,7 @@
             text-decoration: none;
             font-weight: 600;
             transition: 0.2s;
+            word-break: break-word;
         }
         .hero-contact a:hover {
             color: #e67e22;
@@ -245,6 +250,32 @@
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(230,126,34,0.45);
+        }
+        .btn-apply {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            padding: 15px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(46,204,113,0.35);
+            font-size: 1rem;
+        }
+        .btn-apply:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(46,204,113,0.45);
+        }
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 10px;
         }
         .hero-headshot {
             text-align: center;
@@ -385,7 +416,7 @@
             background: linear-gradient(135deg, #fef5e8, #fefaf2);
         }
         .calc-box {
-            max-width: 560px;
+            max-width: 650px;
             margin: 0 auto;
             background: white;
             padding: 45px;
@@ -415,6 +446,49 @@
             outline: none;
             border-color: #e67e22;
             box-shadow: 0 0 0 3px rgba(230,126,34,0.1);
+        }
+        .term-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .term-option {
+            flex: 1;
+            min-width: 70px;
+        }
+        .term-option input {
+            display: none;
+        }
+        .term-option label {
+            display: block;
+            text-align: center;
+            padding: 12px 20px;
+            background: #f0f4fa;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            margin-bottom: 0;
+        }
+        .term-option input:checked + label {
+            background: linear-gradient(135deg, #e67e22, #f39c12);
+            color: white;
+            box-shadow: 0 4px 12px rgba(230,126,34,0.3);
+        }
+        .term-option label:hover {
+            background: #e8eef3;
+            border-color: #e67e22;
+        }
+        .loan-info-row {
+            background: #f8f9fc;
+            padding: 15px;
+            border-radius: 20px;
+            margin: 15px 0;
+            text-align: center;
+            font-weight: 600;
+            color: #2c4e6e;
         }
         .calc-result {
             background: linear-gradient(135deg, #e67e22, #f39c12);
@@ -484,6 +558,7 @@
             gap: 12px;
             color: #2c4e6e;
             font-weight: 500;
+            flex-wrap: wrap;
         }
         .contact-card i {
             color: #e67e22;
@@ -577,16 +652,262 @@
             filter: brightness(0) invert(1);
             opacity: 0.9;
         }
+        
+        /* ============================================ */
+        /* ENHANCED MOBILE RESPONSIVE STYLES */
+        /* ============================================ */
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2rem; }
-            .navbar { flex-direction: column; text-align: center; }
-            .headshot-img { width: 160px; height: 160px; }
-            .section-title { font-size: 1.8rem; }
-            .logo-section { justify-content: center; }
-            .company-logo-img { height: 50px; }
-            .hero-headshot { transform: translateY(12px); }
-            .headshot-img { object-position: center 28%; }
-            .service-map-img { border-radius: 16px; }
+            /* Typography - better readability on phones */
+            body {
+                font-size: 15px;
+            }
+            .hero-content h1 { 
+                font-size: 2rem; 
+            }
+            .section-title { 
+                font-size: 1.8rem; 
+            }
+            .hero-content h1:last-of-type {
+                font-size: 1.6rem;
+            }
+            .hero-contact p {
+                font-size: 0.9rem;
+            }
+            .hero-contact {
+                padding: 20px;
+            }
+            
+            /* Navigation - vertical stack */
+            .navbar { 
+                flex-direction: column; 
+                text-align: center; 
+            }
+            .logo-section { 
+                justify-content: center; 
+                flex-direction: column;
+            }
+            .company-logo-img { 
+                height: 50px; 
+            }
+            .divider-vertical {
+                display: none;
+            }
+            .nav-links {
+                justify-content: center;
+                gap: 20px;
+            }
+            .nav-links a {
+                padding: 8px 12px;
+            }
+            
+            /* Hero section - stack elements */
+            .hero-grid {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+            .hero-content {
+                order: 1;
+            }
+            .hero-headshot {
+                order: 2;
+                transform: translateY(0);
+            }
+            .headshot-img { 
+                width: 160px; 
+                height: 160px; 
+                object-position: center 28%;
+            }
+            
+            /* Button improvements - full width on mobile */
+            .button-group {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .btn-primary, .btn-apply {
+                width: 100%;
+                justify-content: center;
+                padding: 14px 20px;
+                font-size: 0.95rem;
+            }
+            .btn-call {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            /* License badges - wrap nicely */
+            .license-badge, .license-badge-orange {
+                display: block;
+                text-align: center;
+                margin: 10px 0;
+                font-size: 0.8rem;
+            }
+            
+            /* Loan cards - full width */
+            .cards-grid {
+                gap: 20px;
+            }
+            .loan-card {
+                flex: 1 1 100%;
+                padding: 24px 20px;
+            }
+            .loan-card h3 {
+                font-size: 1.4rem;
+            }
+            .loan-card i {
+                font-size: 2.2rem;
+            }
+            
+            /* Map image */
+            .service-map-img {
+                border-radius: 16px;
+            }
+            
+            /* Calculator improvements */
+            .calc-box {
+                padding: 25px;
+            }
+            .term-options {
+                gap: 10px;
+            }
+            .term-option label {
+                padding: 10px 12px;
+                font-size: 0.85rem;
+            }
+            .monthly-payment {
+                font-size: 1.8rem;
+            }
+            .calc-result {
+                padding: 20px;
+            }
+            
+            /* Form improvements - prevents zoom on iOS */
+            .contact-form input, 
+            .contact-form select, 
+            .contact-form textarea {
+                font-size: 16px;  /* Prevents automatic zoom on iOS */
+                padding: 14px 16px;
+            }
+            .contact-form {
+                padding: 25px;
+            }
+            .contact-card {
+                padding: 20px;
+            }
+            .contact-card p {
+                font-size: 0.9rem;
+            }
+            
+            /* Contact form button group */
+            .contact-form .button-group {
+                flex-direction: column;
+            }
+            
+            /* Testimonials */
+            .testimonial-card {
+                padding: 20px;
+            }
+            .testimonial-card p {
+                font-size: 0.9rem;
+            }
+            
+            /* More loans section */
+            .more-loans {
+                padding: 20px;
+            }
+            .more-loans p {
+                font-size: 1rem;
+            }
+            
+            /* Footer */
+            footer {
+                padding: 30px 15px;
+            }
+            footer .footer-links {
+                gap: 20px;
+            }
+            footer .footer-links a {
+                font-size: 0.8rem;
+            }
+            .footer-logo-img {
+                height: 40px;
+            }
+            
+            /* Nationwide message */
+            .nationwide-message {
+                padding: 20px;
+                margin: 20px 0;
+            }
+            .nationwide-message p {
+                font-size: 0.95rem;
+            }
+            
+            /* Hero badge */
+            .hero-badge {
+                font-size: 0.65rem;
+                padding: 4px 12px;
+            }
+        }
+        
+        /* Extra small devices (phones under 480px) */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+            .hero {
+                padding: 40px 0;
+            }
+            .hero-contact p {
+                gap: 8px;
+            }
+            .hero-contact i {
+                width: 24px;
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .loan-tagline {
+                font-size: 0.75rem;
+                padding: 6px 16px;
+            }
+            .term-option label {
+                padding: 8px 8px;
+                font-size: 0.75rem;
+            }
+            .loan-info-row {
+                font-size: 0.85rem;
+            }
+        }
+        
+        /* Touch-friendly improvements for all devices */
+        button, 
+        .btn-primary, 
+        .btn-apply, 
+        .btn-call,
+        .nav-links a,
+        .term-option label,
+        .contact-form button,
+        footer a {
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Better tap targets on mobile */
+        @media (max-width: 768px) {
+            button, 
+            .btn-primary, 
+            .btn-apply, 
+            .btn-call,
+            .nav-links a,
+            .term-option label,
+            .contact-form button,
+            footer a {
+                min-height: 48px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -638,7 +959,11 @@
                 <p><i class="fas fa-globe"></i> <a href="https://www.absoluteml.com/martin-nguyen" target="_blank">www.absoluteml.com/martin-nguyen</a></p>
                 <p><i class="fas fa-map-marker-alt"></i> 4230 Lyndon B Johnson Fwy Ste 625 & 626, Dallas, TX 75244</p>
             </div>
-            <a href="#contact" class="btn-primary"><i class="fas fa-calendar-check"></i> Free Consultation / Tư vấn miễn phí</a>
+            
+            <div class="button-group">
+                <a href="#contact" class="btn-primary"><i class="fas fa-calendar-check"></i> Free Consultation / Tư vấn miễn phí</a>
+                <a href="https://www.absoluteml.com/martin-nguyen" target="_blank" class="btn-apply"><i class="fas fa-paper-plane"></i> Apply NOW / Đăng ký ngay</a>
+            </div>
         </div>
         
         <div class="hero-headshot">
@@ -658,12 +983,10 @@
     </div>
 </div>
 
-<!-- SERVICE AREA SECTION WITH YOUR MAP -->
 <section class="service-area">
     <div class="container">
         <h2 class="section-title">🌎 Where We Serve</h2>
         
-        <!-- YOUR MAP IMAGE - servemap.png -->
         <div style="margin: 30px auto; max-width: 900px; text-align: center;">
             <img src="servemap.png" 
                  alt="Service Area Map - Martin licensed in Texas, Team licensed in 41+ states and counting" 
@@ -763,19 +1086,47 @@
         <h2 class="section-title">📐 Mortgage Calculator</h2>
         <div class="calc-box">
             <div class="input-group">
-                <label>💰 Loan Amount / Số tiền vay</label>
-                <input type="number" id="loanAmount" value="350000" step="10000">
+                <label>🏠 Purchase Amount / Giá trị căn nhà</label>
+                <input type="number" id="purchaseAmount" value="400000" step="10000" placeholder="Purchase price">
             </div>
+            <div class="input-group">
+                <label>💰 Down Payment Amount / Số tiền trả trước</label>
+                <input type="number" id="downPayment" value="50000" step="5000" placeholder="Down payment">
+            </div>
+            
+            <div class="loan-info-row" id="loanInfoDisplay">
+                Loan Amount / Số tiền vay: $350,000
+            </div>
+            
             <div class="input-group">
                 <label>📈 Interest Rate / Lãi suất năm (%)</label>
                 <input type="number" id="interestRate" value="6.5" step="0.125">
             </div>
+            
             <div class="input-group">
-                <label>⏱️ Loan Term / Thời gian vay (năm)</label>
-                <input type="number" id="loanTerm" value="30">
+                <label>⏱️ Loan Term / Thời gian vay</label>
+                <div class="term-options">
+                    <div class="term-option">
+                        <input type="radio" name="loanTerm" id="term10" value="10">
+                        <label for="term10">10 năm</label>
+                    </div>
+                    <div class="term-option">
+                        <input type="radio" name="loanTerm" id="term15" value="15">
+                        <label for="term15">15 năm</label>
+                    </div>
+                    <div class="term-option">
+                        <input type="radio" name="loanTerm" id="term20" value="20">
+                        <label for="term20">20 năm</label>
+                    </div>
+                    <div class="term-option">
+                        <input type="radio" name="loanTerm" id="term30" value="30" checked>
+                        <label for="term30">30 năm</label>
+                    </div>
+                </div>
             </div>
+            
             <div class="calc-result">
-                <div>💵 Estimated Monthly Payment</div>
+                <div>💵 Estimated Monthly Payment / Trả góp hàng tháng</div>
                 <div class="monthly-payment" id="monthlyDisplay">$0</div>
                 <small>Principal + Interest (before taxes & insurance)</small>
             </div>
@@ -836,7 +1187,10 @@
                 
                 <textarea name="Questions" id="questions" rows="3" placeholder="💬 Your Questions / Câu hỏi của bạn..."></textarea>
                 
-                <button type="submit"><i class="fas fa-paper-plane"></i> Send Request / Gửi yêu cầu</button>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button type="submit" style="flex: 1;"><i class="fas fa-paper-plane"></i> Send Request / Gửi yêu cầu</button>
+                    <a href="https://www.absoluteml.com/martin-nguyen" target="_blank" style="flex: 1; text-align: center; background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 15px; border-radius: 50px; font-weight: 700; font-size: 1rem; text-decoration: none; display: inline-block; box-shadow: 0 4px 12px rgba(46,204,113,0.3);"><i class="fas fa-file-signature"></i> Apply NOW / Đăng ký ngay</a>
+                </div>
                 <div class="form-disclaimer">
                     By submitting, you consent to be contacted. For properties outside Texas, a licensed team member will assist you.
                 </div>
@@ -874,6 +1228,10 @@
             <a href="#contact">Contact</a>
         </div>
         
+        <div style="margin: 20px 0;">
+            <a href="https://www.absoluteml.com/martin-nguyen" target="_blank" style="background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 4px 12px rgba(46,204,113,0.3);"><i class="fas fa-paper-plane"></i> Apply NOW / Đăng ký ngay</a>
+        </div>
+        
         <img src="logo.png" alt="Absolute Mortgage & Lending" class="footer-logo-img" onerror="this.style.display='none'">
         
         <div class="equal-housing" style="background: transparent; color: #b8d4e8; justify-content: center; margin: 0 auto 20px;">
@@ -890,31 +1248,46 @@
 
 <script>
     function updateMonthly() {
-        let amount = parseFloat(document.getElementById('loanAmount').value);
+        let purchaseAmount = parseFloat(document.getElementById('purchaseAmount').value);
+        let downPayment = parseFloat(document.getElementById('downPayment').value);
         let rate = parseFloat(document.getElementById('interestRate').value);
-        let years = parseInt(document.getElementById('loanTerm').value);
         
-        if (isNaN(amount)) amount = 350000;
+        let selectedTerm = document.querySelector('input[name="loanTerm"]:checked');
+        let years = selectedTerm ? parseInt(selectedTerm.value) : 30;
+        
+        if (isNaN(purchaseAmount)) purchaseAmount = 400000;
+        if (isNaN(downPayment)) downPayment = 50000;
         if (isNaN(rate)) rate = 6.5;
-        if (isNaN(years)) years = 30;
+        
+        let loanAmount = purchaseAmount - downPayment;
+        if (loanAmount < 0) loanAmount = 0;
+        
+        document.getElementById('loanInfoDisplay').innerHTML = `Loan Amount / Số tiền vay: $${loanAmount.toLocaleString()}`;
         
         const monthlyRate = rate / 100 / 12;
         const payments = years * 12;
         let monthly = 0;
         
-        if (monthlyRate === 0) {
-            monthly = amount / payments;
+        if (loanAmount > 0 && monthlyRate > 0) {
+            monthly = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, payments)) / (Math.pow(1 + monthlyRate, payments) - 1);
+        } else if (loanAmount > 0 && monthlyRate === 0) {
+            monthly = loanAmount / payments;
         } else {
-            monthly = amount * (monthlyRate * Math.pow(1 + monthlyRate, payments)) / (Math.pow(1 + monthlyRate, payments) - 1);
+            monthly = 0;
         }
         
         if (!isFinite(monthly)) monthly = 0;
         document.getElementById('monthlyDisplay').innerText = '$' + monthly.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
     
-    document.getElementById('loanAmount').addEventListener('input', updateMonthly);
+    document.getElementById('purchaseAmount').addEventListener('input', updateMonthly);
+    document.getElementById('downPayment').addEventListener('input', updateMonthly);
     document.getElementById('interestRate').addEventListener('input', updateMonthly);
-    document.getElementById('loanTerm').addEventListener('input', updateMonthly);
+    
+    document.querySelectorAll('input[name="loanTerm"]').forEach(radio => {
+        radio.addEventListener('change', updateMonthly);
+    });
+    
     updateMonthly();
 </script>
 
