@@ -248,15 +248,19 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(230,126,34,0.45);
         }
-        /* Headshot - USING YOUR martin-headshot.png */
+        /* Headshot - ADJUSTED: moved lower for better hair visibility */
         .hero-headshot {
             text-align: center;
+            position: relative;
+            /* Added a container shift: move the whole headshot block slightly downward */
+            transform: translateY(18px); /* ~ 1/4 of image height lowered (230px * 0.08 ≈ 18px) */
         }
         .headshot-img {
             width: 230px;
             height: 230px;
             border-radius: 50%;
             object-fit: cover;
+            object-position: center 30%; /* Fine-tune focal point: shift vertical crop slightly lower to reveal more hair */
             border: 4px solid white;
             box-shadow: 0 25px 45px rgba(0,0,0,0.15);
             margin-bottom: 15px;
@@ -630,6 +634,13 @@
             .section-title { font-size: 1.8rem; }
             .logo-section { justify-content: center; }
             .company-logo-img { height: 50px; }
+            /* adjust headshot container translation on mobile for subtle balance */
+            .hero-headshot {
+                transform: translateY(12px);
+            }
+            .headshot-img {
+                object-position: center 28%;
+            }
         }
     </style>
 </head>
@@ -686,7 +697,7 @@
         </div>
         
         <div class="hero-headshot">
-            <!-- YOUR HEADSHOT - martin-headshot.png -->
+            <!-- YOUR HEADSHOT - martin-headshot.png: adjusted position downward and fine-tuned crop to show full hair -->
             <img src="martin-headshot.png" alt="Martin Nguyen" class="headshot-img" onerror="this.src='https://ui-avatars.com/api/?background=e67e22&color=fff&rounded=true&size=230&name=Martin+Nguyen&bold=true'">
             <div class="headshot-caption">
                 <i class="fas fa-user-tie"></i> Martin Nguyen<br>
