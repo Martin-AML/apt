@@ -20,14 +20,14 @@
             background: linear-gradient(135deg, #f8f9fc 0%, #f0f4fa 100%);
             color: #1a2c3e;
             line-height: 1.5;
-            font-size: 16px; /* Base font size for better readability */
+            font-size: 16px;
         }
         .container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 24px;
         }
-        /* Header */
+        /* Header - COMPACT VERSION */
         header {
             background: rgba(255,255,255,0.98);
             backdrop-filter: blur(10px);
@@ -40,18 +40,18 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 0;
+            padding: 12px 0;
             flex-wrap: wrap;
-            gap: 16px;
+            gap: 12px;
         }
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 12px;
             flex-wrap: wrap;
         }
         .company-logo-img {
-            height: 60px;
+            height: 45px;
             width: auto;
             object-fit: contain;
             transition: transform 0.3s ease;
@@ -61,21 +61,22 @@
         }
         .divider-vertical {
             width: 2px;
-            height: 50px;
+            height: 40px;
             background: linear-gradient(135deg, #e67e22, #f39c12);
-            margin: 0 5px;
+            margin: 0 3px;
         }
         .logo h1 {
-            font-size: 1.7rem;
+            font-size: 1.3rem;
             font-weight: 800;
             background: linear-gradient(135deg, #0f5b7a, #e67e22, #1a8fbb);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             letter-spacing: -0.5px;
+            line-height: 1.2;
         }
         .logo p {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
             background: linear-gradient(135deg, #e67e22, #f39c12);
             -webkit-background-clip: text;
             background-clip: text;
@@ -84,26 +85,27 @@
         }
         .nmls-badge {
             background: linear-gradient(135deg, #fef5e8, #fff0e0);
-            padding: 4px 12px;
+            padding: 3px 10px;
             border-radius: 30px;
-            font-size: 0.7rem;
+            font-size: 0.6rem;
             font-weight: 700;
             display: inline-block;
             color: #e67e22;
         }
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 20px;
             list-style: none;
             flex-wrap: wrap;
+            align-items: center;
         }
         .nav-links a {
             text-decoration: none;
             font-weight: 600;
             color: #2c4e6e;
             transition: 0.3s;
-            padding: 8px 0;
-            display: inline-block;
+            font-size: 0.85rem;
+            padding: 6px 0;
         }
         .nav-links a:hover {
             color: #e67e22;
@@ -111,20 +113,21 @@
         .btn-call {
             background: linear-gradient(135deg, #e67e22, #f39c12);
             color: white !important;
-            padding: 10px 24px;
+            padding: 6px 16px;
             border-radius: 40px;
             font-weight: 700;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             box-shadow: 0 4px 12px rgba(230,126,34,0.3);
+            font-size: 0.8rem;
         }
         .btn-call:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(230,126,34,0.4);
         }
         .hero {
-            padding: 70px 0 60px;
+            padding: 50px 0 50px;
             position: relative;
             overflow: hidden;
         }
@@ -141,7 +144,7 @@
         .hero-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 50px;
+            gap: 40px;
             align-items: center;
             position: relative;
             z-index: 1;
@@ -155,17 +158,17 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 6px 18px;
+            padding: 4px 14px;
             border-radius: 40px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 700;
             letter-spacing: 0.5px;
             box-shadow: 0 2px 8px rgba(230,126,34,0.3);
         }
         .hero-content h1 {
-            font-size: 3.2rem;
+            font-size: 2.8rem;
             font-weight: 800;
-            margin: 20px 0 12px;
+            margin: 15px 0 10px;
             background: linear-gradient(135deg, #1a2c3e, #e67e22, #2c6e8a);
             -webkit-background-clip: text;
             background-clip: text;
@@ -175,22 +178,22 @@
         .license-badge {
             background: linear-gradient(135deg, #e3f5ec, #c8f0e0);
             display: inline-block;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 700;
-            margin: 15px 8px 15px 0;
+            margin: 12px 8px 12px 0;
             color: #1e7a5c;
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         }
         .license-badge-orange {
             background: linear-gradient(135deg, #fef3e8, #ffe6d5);
             display: inline-block;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 700;
-            margin: 15px 0;
+            margin: 12px 0;
             color: #c9601a;
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         }
@@ -200,24 +203,23 @@
         .hero-contact {
             background: white;
             border-radius: 28px;
-            padding: 28px;
-            margin: 25px 0;
+            padding: 22px;
+            margin: 20px 0;
             box-shadow: 0 15px 35px rgba(0,0,0,0.08);
             border: 1px solid rgba(230,126,34,0.15);
         }
         .hero-contact p {
-            margin: 14px 0;
+            margin: 10px 0;
             display: flex;
             align-items: center;
-            gap: 14px;
-            font-size: 1rem;
+            gap: 12px;
+            font-size: 0.9rem;
             color: #2c4e6e;
             font-weight: 500;
-            flex-wrap: wrap;
         }
         .hero-contact i {
-            width: 30px;
-            font-size: 1.2rem;
+            width: 28px;
+            font-size: 1rem;
             color: #e67e22;
         }
         .hero-contact a {
@@ -234,18 +236,18 @@
         .btn-primary {
             background: linear-gradient(135deg, #e67e22, #f39c12);
             color: white;
-            padding: 15px 36px;
+            padding: 12px 32px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             transition: 0.3s;
             border: none;
             cursor: pointer;
             box-shadow: 0 6px 18px rgba(230,126,34,0.35);
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
         .btn-primary:hover {
             transform: translateY(-3px);
@@ -254,18 +256,18 @@
         .btn-apply {
             background: linear-gradient(135deg, #2ecc71, #27ae60);
             color: white;
-            padding: 15px 36px;
+            padding: 12px 32px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             transition: 0.3s;
             border: none;
             cursor: pointer;
             box-shadow: 0 6px 18px rgba(46,204,113,0.35);
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
         .btn-apply:hover {
             transform: translateY(-3px);
@@ -274,27 +276,27 @@
         .button-group {
             display: flex;
             flex-wrap: wrap;
-            gap: 16px;
+            gap: 14px;
             margin-top: 10px;
         }
         .hero-headshot {
             text-align: center;
             position: relative;
-            transform: translateY(18px);
+            transform: translateY(15px);
         }
         .headshot-img {
-            width: 230px;
-            height: 230px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             object-fit: cover;
             object-position: center 30%;
             border: 4px solid white;
             box-shadow: 0 25px 45px rgba(0,0,0,0.15);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             background: linear-gradient(135deg, #f0f4fa, #fff);
         }
         .headshot-caption {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             background: linear-gradient(135deg, #e67e22, #f39c12);
             -webkit-background-clip: text;
             background-clip: text;
@@ -302,12 +304,12 @@
             font-weight: 700;
         }
         .loan-types {
-            padding: 80px 0;
+            padding: 60px 0;
             background: linear-gradient(135deg, #ffffff, #fefefa);
         }
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 800;
             margin-bottom: 16px;
             background: linear-gradient(135deg, #1a2c3e, #e67e22, #2c6e8a);
@@ -319,30 +321,30 @@
             text-align: center;
             color: #5a7a90;
             max-width: 750px;
-            margin: 0 auto 50px;
-            font-size: 1.1rem;
+            margin: 0 auto 40px;
+            font-size: 1rem;
         }
         .loan-tagline {
             background: linear-gradient(135deg, #fef5e8, #fff0e0);
             display: inline-block;
-            padding: 8px 24px;
+            padding: 6px 20px;
             border-radius: 50px;
             font-weight: 600;
             color: #e67e22;
-            margin-bottom: 30px;
-            font-size: 0.9rem;
+            margin-bottom: 25px;
+            font-size: 0.85rem;
         }
         .cards-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 25px;
             justify-content: center;
         }
         .loan-card {
             background: white;
             border-radius: 28px;
-            padding: 32px 28px;
-            flex: 1 1 270px;
+            padding: 28px 24px;
+            flex: 1 1 260px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.06);
             border: 1px solid rgba(230,126,34,0.1);
             transition: all 0.3s ease;
@@ -353,33 +355,34 @@
             border-color: rgba(230,126,34,0.3);
         }
         .loan-card i {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             background: linear-gradient(135deg, #e67e22, #f39c12);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .loan-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 12px;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
             color: #1a2c3e;
             font-weight: 700;
         }
         .loan-card p {
-            margin: 12px 0;
+            margin: 10px 0;
             color: #4a6a80;
+            font-size: 0.9rem;
         }
         .more-loans {
             text-align: center;
-            margin-top: 50px;
-            padding: 30px;
+            margin-top: 40px;
+            padding: 25px;
             background: linear-gradient(135deg, #f8f9fc, #fff);
             border-radius: 28px;
             border: 1px solid rgba(230,126,34,0.2);
         }
         .more-loans p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
             color: #2c4e6e;
         }
@@ -388,19 +391,19 @@
             font-weight: 800;
         }
         .testimonials {
-            padding: 60px 0;
+            padding: 50px 0;
             background: #fff;
         }
         .testimonial-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 40px;
+            gap: 25px;
+            margin-top: 35px;
         }
         .testimonial-card {
             background: #fefaf5;
             border-radius: 24px;
-            padding: 30px;
+            padding: 25px;
             flex: 1;
             border-left: 5px solid #e67e22;
             box-shadow: 0 8px 20px rgba(0,0,0,0.05);
@@ -408,37 +411,38 @@
         .testimonial-card i.fa-quote-left {
             color: #e67e22;
             opacity: 0.3;
-            font-size: 2rem;
-            margin-bottom: 10px;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
         }
         .calculator {
-            padding: 80px 0;
+            padding: 60px 0;
             background: linear-gradient(135deg, #fef5e8, #fefaf2);
         }
         .calc-box {
-            max-width: 650px;
+            max-width: 600px;
             margin: 0 auto;
             background: white;
-            padding: 45px;
+            padding: 35px;
             border-radius: 40px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.08);
             border: 1px solid rgba(230,126,34,0.2);
         }
         .input-group {
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
         .input-group label {
             font-weight: 700;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: #1a2c3e;
+            font-size: 0.9rem;
         }
         .input-group input {
             width: 100%;
-            padding: 14px 20px;
+            padding: 12px 18px;
             border-radius: 40px;
             border: 2px solid #e8eef3;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: 0.2s;
             font-weight: 500;
         }
@@ -450,12 +454,12 @@
         .term-options {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 10px;
+            gap: 12px;
+            margin-top: 8px;
         }
         .term-option {
             flex: 1;
-            min-width: 70px;
+            min-width: 65px;
         }
         .term-option input {
             display: none;
@@ -463,7 +467,7 @@
         .term-option label {
             display: block;
             text-align: center;
-            padding: 12px 20px;
+            padding: 10px 16px;
             background: #f0f4fa;
             border-radius: 50px;
             font-weight: 600;
@@ -471,6 +475,7 @@
             transition: all 0.3s ease;
             border: 2px solid transparent;
             margin-bottom: 0;
+            font-size: 0.85rem;
         }
         .term-option input:checked + label {
             background: linear-gradient(135deg, #e67e22, #f39c12);
@@ -483,34 +488,35 @@
         }
         .loan-info-row {
             background: #f8f9fc;
-            padding: 15px;
+            padding: 12px;
             border-radius: 20px;
-            margin: 15px 0;
+            margin: 12px 0;
             text-align: center;
             font-weight: 600;
             color: #2c4e6e;
+            font-size: 0.9rem;
         }
         .calc-result {
             background: linear-gradient(135deg, #e67e22, #f39c12);
             color: white;
-            padding: 30px;
+            padding: 25px;
             border-radius: 32px;
             text-align: center;
-            margin-top: 15px;
+            margin-top: 12px;
         }
         .monthly-payment {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 800;
-            margin-top: 8px;
+            margin-top: 6px;
         }
         .calc-disclaimer {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             text-align: center;
-            margin-top: 20px;
+            margin-top: 15px;
             color: #8a9eb0;
         }
         .service-area {
-            padding: 60px 0;
+            padding: 50px 0;
             background: linear-gradient(135deg, #1a2c3e, #1f3d52);
             text-align: center;
         }
@@ -533,13 +539,13 @@
             transform: scale(1.01);
         }
         .contact {
-            padding: 80px 0;
+            padding: 60px 0;
             background: white;
         }
         .contact-flex {
             display: flex;
             flex-wrap: wrap;
-            gap: 50px;
+            gap: 40px;
         }
         .contact-info {
             flex: 1;
@@ -547,39 +553,40 @@
         .contact-card {
             background: linear-gradient(135deg, #fef5e8, #fffaf0);
             border-radius: 32px;
-            padding: 32px;
-            margin-top: 24px;
+            padding: 25px;
+            margin-top: 20px;
             border: 1px solid rgba(230,126,34,0.15);
         }
         .contact-card p {
-            margin: 14px 0;
+            margin: 12px 0;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             color: #2c4e6e;
             font-weight: 500;
+            font-size: 0.85rem;
             flex-wrap: wrap;
         }
         .contact-card i {
             color: #e67e22;
-            width: 28px;
-            font-size: 1.1rem;
+            width: 25px;
+            font-size: 1rem;
         }
         .contact-form {
             flex: 1;
             background: linear-gradient(135deg, #f8f4ef, #fefaf5);
-            padding: 40px;
+            padding: 30px;
             border-radius: 32px;
             border: 1px solid rgba(230,126,34,0.15);
         }
         .contact-form input, .contact-form select, .contact-form textarea {
             width: 100%;
-            padding: 14px 20px;
-            margin-bottom: 18px;
+            padding: 12px 18px;
+            margin-bottom: 15px;
             border-radius: 40px;
             border: 2px solid #e8eef3;
             font-family: inherit;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             background: white;
             transition: 0.2s;
         }
@@ -589,17 +596,17 @@
         }
         .contact-form textarea {
             resize: vertical;
-            min-height: 90px;
+            min-height: 80px;
             border-radius: 24px;
         }
         .contact-form button {
             background: linear-gradient(135deg, #e67e22, #f39c12);
             color: white;
             width: 100%;
-            padding: 15px;
+            padding: 12px;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.9rem;
             border: none;
             cursor: pointer;
             transition: 0.3s;
@@ -610,24 +617,24 @@
             box-shadow: 0 8px 20px rgba(230,126,34,0.4);
         }
         .form-disclaimer {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             text-align: center;
-            margin-top: 15px;
+            margin-top: 12px;
             color: #8a9eb0;
         }
         footer {
             background: linear-gradient(135deg, #0a2f44, #0a2f44);
             color: #b8d4e8;
             text-align: center;
-            padding: 45px 20px;
-            font-size: 0.85rem;
+            padding: 35px 20px;
+            font-size: 0.8rem;
         }
         footer .footer-links {
             display: flex;
             justify-content: center;
-            gap: 35px;
+            gap: 25px;
             flex-wrap: wrap;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         footer a {
             color: #f39c12;
@@ -639,72 +646,92 @@
             color: #e67e22;
         }
         .footer-nmls {
-            font-size: 0.75rem;
-            margin-top: 20px;
+            font-size: 0.7rem;
+            margin-top: 15px;
             border-top: 1px solid #2a5a74;
-            padding-top: 20px;
+            padding-top: 15px;
         }
         .footer-logo-img {
-            height: 50px;
+            height: 40px;
             width: auto;
             object-fit: contain;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             filter: brightness(0) invert(1);
             opacity: 0.9;
         }
         
         /* ============================================ */
-        /* ENHANCED MOBILE RESPONSIVE STYLES */
+        /* COMPACT MOBILE HEADER - Only 1/6 of screen */
         /* ============================================ */
         @media (max-width: 768px) {
-            /* Typography - better readability on phones */
-            body {
-                font-size: 15px;
+            /* Mobile header - VERY COMPACT */
+            .navbar {
+                padding: 8px 0;
+                gap: 8px;
             }
-            .hero-content h1 { 
-                font-size: 2rem; 
+            .logo-section {
+                gap: 8px;
+                justify-content: center;
+                width: 100%;
             }
-            .section-title { 
-                font-size: 1.8rem; 
-            }
-            .hero-content h1:last-of-type {
-                font-size: 1.6rem;
-            }
-            .hero-contact p {
-                font-size: 0.9rem;
-            }
-            .hero-contact {
-                padding: 20px;
-            }
-            
-            /* Navigation - vertical stack */
-            .navbar { 
-                flex-direction: column; 
-                text-align: center; 
-            }
-            .logo-section { 
-                justify-content: center; 
-                flex-direction: column;
-            }
-            .company-logo-img { 
-                height: 50px; 
+            .company-logo-img {
+                height: 35px;
             }
             .divider-vertical {
-                display: none;
+                height: 30px;
+                margin: 0 2px;
+            }
+            .logo h1 {
+                font-size: 0.95rem;
+            }
+            .logo p {
+                font-size: 0.5rem;
+            }
+            .nmls-badge {
+                padding: 2px 8px;
+                font-size: 0.5rem;
             }
             .nav-links {
                 justify-content: center;
-                gap: 20px;
+                gap: 12px;
+                width: 100%;
             }
             .nav-links a {
-                padding: 8px 12px;
+                font-size: 0.7rem;
+                padding: 4px 0;
+            }
+            .btn-call {
+                padding: 4px 12px;
+                font-size: 0.7rem;
+                gap: 4px;
             }
             
-            /* Hero section - stack elements */
+            /* Hero section - reduced top margin */
+            .hero {
+                padding: 25px 0 40px;
+            }
+            .hero-content h1 {
+                font-size: 1.6rem;
+                margin: 10px 0 8px;
+            }
+            .hero-content h1:last-of-type {
+                font-size: 1.3rem;
+            }
+            
+            /* Rest of mobile styles remain */
+            .section-title { 
+                font-size: 1.6rem; 
+            }
+            .hero-contact p {
+                font-size: 0.8rem;
+            }
+            .hero-contact {
+                padding: 16px;
+            }
             .hero-grid {
                 flex-direction: column;
                 text-align: center;
-                gap: 30px;
+                gap: 25px;
             }
             .hero-content {
                 order: 1;
@@ -714,173 +741,136 @@
                 transform: translateY(0);
             }
             .headshot-img { 
-                width: 160px; 
-                height: 160px; 
+                width: 140px; 
+                height: 140px; 
                 object-position: center 28%;
             }
-            
-            /* Button improvements - full width on mobile */
             .button-group {
                 flex-direction: column;
-                gap: 12px;
+                gap: 10px;
             }
             .btn-primary, .btn-apply {
                 width: 100%;
                 justify-content: center;
-                padding: 14px 20px;
-                font-size: 0.95rem;
+                padding: 10px 16px;
+                font-size: 0.85rem;
             }
-            .btn-call {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            /* License badges - wrap nicely */
             .license-badge, .license-badge-orange {
                 display: block;
                 text-align: center;
-                margin: 10px 0;
-                font-size: 0.8rem;
+                margin: 8px 0;
+                font-size: 0.7rem;
+                padding: 6px 12px;
             }
-            
-            /* Loan cards - full width */
             .cards-grid {
-                gap: 20px;
+                gap: 16px;
             }
             .loan-card {
                 flex: 1 1 100%;
-                padding: 24px 20px;
+                padding: 20px 16px;
             }
             .loan-card h3 {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
             }
             .loan-card i {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
-            
-            /* Map image */
             .service-map-img {
                 border-radius: 16px;
             }
-            
-            /* Calculator improvements */
             .calc-box {
-                padding: 25px;
-            }
-            .term-options {
-                gap: 10px;
-            }
-            .term-option label {
-                padding: 10px 12px;
-                font-size: 0.85rem;
-            }
-            .monthly-payment {
-                font-size: 1.8rem;
-            }
-            .calc-result {
                 padding: 20px;
             }
-            
-            /* Form improvements - prevents zoom on iOS */
+            .term-options {
+                gap: 8px;
+            }
+            .term-option label {
+                padding: 8px 10px;
+                font-size: 0.75rem;
+            }
+            .monthly-payment {
+                font-size: 1.6rem;
+            }
+            .calc-result {
+                padding: 16px;
+            }
             .contact-form input, 
             .contact-form select, 
             .contact-form textarea {
-                font-size: 16px;  /* Prevents automatic zoom on iOS */
-                padding: 14px 16px;
+                font-size: 14px;
+                padding: 10px 14px;
             }
             .contact-form {
-                padding: 25px;
+                padding: 20px;
             }
             .contact-card {
-                padding: 20px;
+                padding: 16px;
             }
             .contact-card p {
-                font-size: 0.9rem;
-            }
-            
-            /* Contact form button group */
-            .contact-form .button-group {
-                flex-direction: column;
-            }
-            
-            /* Testimonials */
-            .testimonial-card {
-                padding: 20px;
-            }
-            .testimonial-card p {
-                font-size: 0.9rem;
-            }
-            
-            /* More loans section */
-            .more-loans {
-                padding: 20px;
-            }
-            .more-loans p {
-                font-size: 1rem;
-            }
-            
-            /* Footer */
-            footer {
-                padding: 30px 15px;
-            }
-            footer .footer-links {
-                gap: 20px;
-            }
-            footer .footer-links a {
                 font-size: 0.8rem;
             }
-            .footer-logo-img {
-                height: 40px;
+            .testimonial-card {
+                padding: 16px;
             }
-            
-            /* Nationwide message */
-            .nationwide-message {
-                padding: 20px;
-                margin: 20px 0;
+            .testimonial-card p {
+                font-size: 0.85rem;
             }
-            .nationwide-message p {
+            .more-loans {
+                padding: 16px;
+            }
+            .more-loans p {
                 font-size: 0.95rem;
             }
-            
-            /* Hero badge */
+            footer {
+                padding: 25px 15px;
+            }
+            footer .footer-links {
+                gap: 15px;
+            }
+            footer .footer-links a {
+                font-size: 0.7rem;
+            }
+            .footer-logo-img {
+                height: 35px;
+            }
+            .nationwide-message {
+                padding: 15px;
+                margin: 15px 0;
+            }
+            .nationwide-message p {
+                font-size: 0.85rem;
+            }
             .hero-badge {
-                font-size: 0.65rem;
-                padding: 4px 12px;
+                font-size: 0.6rem;
+                padding: 3px 10px;
             }
         }
         
-        /* Extra small devices (phones under 480px) */
+        /* Extra small devices */
         @media (max-width: 480px) {
             .container {
                 padding: 0 16px;
             }
             .hero {
-                padding: 40px 0;
-            }
-            .hero-contact p {
-                gap: 8px;
-            }
-            .hero-contact i {
-                width: 24px;
-                font-size: 1rem;
+                padding: 20px 0 30px;
             }
             .section-title {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
             .loan-tagline {
-                font-size: 0.75rem;
-                padding: 6px 16px;
+                font-size: 0.7rem;
+                padding: 5px 12px;
             }
             .term-option label {
-                padding: 8px 8px;
-                font-size: 0.75rem;
+                padding: 6px 8px;
+                font-size: 0.7rem;
             }
             .loan-info-row {
-                font-size: 0.85rem;
+                font-size: 0.8rem;
             }
         }
         
-        /* Touch-friendly improvements for all devices */
+        /* Touch-friendly improvements */
         button, 
         .btn-primary, 
         .btn-apply, 
@@ -893,7 +883,6 @@
             -webkit-tap-highlight-color: transparent;
         }
         
-        /* Better tap targets on mobile */
         @media (max-width: 768px) {
             button, 
             .btn-primary, 
@@ -903,7 +892,7 @@
             .term-option label,
             .contact-form button,
             footer a {
-                min-height: 48px;
+                min-height: 40px;
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
@@ -936,6 +925,7 @@
     </div>
 </header>
 
+<!-- REST OF YOUR CONTENT REMAINS THE SAME -->
 <section class="hero">
     <div class="container hero-grid">
         <div class="hero-content">
@@ -944,7 +934,7 @@
                 <span style="font-size: 0.65rem;">#ABSOLUTEML</span>
             </div>
             <h1>Your Dream Home Starts Here</h1>
-            <h1 style="font-size: 2.2rem; margin-top: -10px;">Vay mua nhà & đầu tư tài sản</h1>
+            <h1 style="font-size: 2rem; margin-top: -8px;">Vay mua nhà & đầu tư tài sản</h1>
             
             <div class="license-badge">
                 <i class="fas fa-check-circle"></i> Martin Nguyen: Licensed in TEXAS | NMLS #2684170
@@ -967,10 +957,10 @@
         </div>
         
         <div class="hero-headshot">
-            <img src="martin-headshot.png" alt="Martin Nguyen" class="headshot-img" onerror="this.src='https://ui-avatars.com/api/?background=e67e22&color=fff&rounded=true&size=230&name=Martin+Nguyen&bold=true'">
+            <img src="martin-headshot.png" alt="Martin Nguyen" class="headshot-img" onerror="this.src='https://ui-avatars.com/api/?background=e67e22&color=fff&rounded=true&size=200&name=Martin+Nguyen&bold=true'">
             <div class="headshot-caption">
                 <i class="fas fa-user-tie"></i> Martin Nguyen<br>
-                <span style="font-size: 0.7rem;">Your Trusted Loan Originator</span>
+                <span style="font-size: 0.65rem;">Your Trusted Loan Originator</span>
             </div>
         </div>
     </div>
@@ -986,12 +976,11 @@
 <section class="service-area">
     <div class="container">
         <h2 class="section-title">🌎 Where We Serve</h2>
-        
         <div style="margin: 30px auto; max-width: 900px; text-align: center;">
             <img src="servemap.png" 
                  alt="Service Area Map - Martin licensed in Texas, Team licensed in 41+ states and counting" 
                  class="service-map-img">
-            <p style="color: #f39c12; margin-top: 20px; font-size: 0.95rem;">
+            <p style="color: #f39c12; margin-top: 20px; font-size: 0.9rem;">
                 <i class="fas fa-map-marked-alt"></i> Martin Nguyen licensed in Texas | Our team licensed in 41+ and counting nationwide
             </p>
         </div>
@@ -1053,7 +1042,7 @@
         <div class="more-loans">
             <p><i class="fas fa-gem" style="color: #e67e22;"></i> <span>and much more...</span></p>
             <p style="font-size: 1rem; margin-top: 10px;">✓ Renovation Loans (FHA 203k, Homestyle)  ✓ Bridge Loans  ✓ Construction Loans<br>✓ Bank Statement Loans  ✓ Asset Depletion Loans  ✓ Second Homes & Investment Properties</p>
-            <p style="margin-top: 15px; font-size: 0.95rem; color: #e67e22;"><i class="fas fa-phone-alt"></i> Ask us about any loan program — if it exists, we can help you get it!</p>
+            <p style="margin-top: 15px; font-size: 0.9rem; color: #e67e22;"><i class="fas fa-phone-alt"></i> Ask us about any loan program — if it exists, we can help you get it!</p>
         </div>
     </div>
 </section>
@@ -1140,14 +1129,14 @@
 <section id="contact" class="contact">
     <div class="container contact-flex">
         <div class="contact-info">
-            <h2 class="section-title" style="text-align: left; font-size: 1.8rem; background: none; color: #1a2c3e;">📞 Contact Me Today</h2>
+            <h2 class="section-title" style="text-align: left; font-size: 1.6rem; background: none; color: #1a2c3e;">📞 Contact Me Today</h2>
             <div class="contact-card">
-                <p><i class="fas fa-building"></i> <strong>Absolute Mortgage & Lending</strong><br>DBA of AML FUNDING LLC | NMLS #1910591<br><span style="font-size: 0.8rem; color: #e67e22;">#ABSOLUTEML</span></p>
+                <p><i class="fas fa-building"></i> <strong>Absolute Mortgage & Lending</strong><br>DBA of AML FUNDING LLC | NMLS #1910591<br><span style="font-size: 0.75rem; color: #e67e22;">#ABSOLUTEML</span></p>
                 <p><i class="fas fa-phone-alt"></i> <strong>(408) 661-6661</strong></p>
                 <p><i class="fas fa-envelope"></i> martin.nguyen@AbsoluteML.com</p>
                 <p><i class="fas fa-globe"></i> www.absoluteml.com/martin-nguyen</p>
                 <p><i class="fas fa-map-marker-alt"></i> 4230 Lyndon B Johnson Fwy Ste 625 & 626, Dallas, TX 75244</p>
-                <hr style="margin: 20px 0; border-color: #f0dcc8;">
+                <hr style="margin: 15px 0; border-color: #f0dcc8;">
                 <p><i class="fas fa-id-card"></i> <strong>Martin Nguyen</strong> | NMLS #2684170 | Licensed in Texas</p>
                 <p><i class="fas fa-users"></i> <strong>Our Team:</strong> Licensed in 41+ and counting nationwide</p>
                 <div class="equal-housing">
@@ -1156,7 +1145,7 @@
             </div>
         </div>
         <div class="contact-form">
-            <h3 style="margin-bottom: 20px; color: #1a2c3e;">✨ Free Consultation</h3>
+            <h3 style="margin-bottom: 15px; color: #1a2c3e; font-size: 1.2rem;">✨ Free Consultation</h3>
             <form id="leadForm" name="contact" method="POST" data-netlify="true">
                 <input type="hidden" name="form-name" value="contact" />
                 <input type="text" name="Full Name" placeholder="Full Name / Họ và tên *" required id="fullName">
@@ -1187,9 +1176,9 @@
                 
                 <textarea name="Questions" id="questions" rows="3" placeholder="💬 Your Questions / Câu hỏi của bạn..."></textarea>
                 
-                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
                     <button type="submit" style="flex: 1;"><i class="fas fa-paper-plane"></i> Send Request / Gửi yêu cầu</button>
-                    <a href="https://www.absoluteml.com/martin-nguyen" target="_blank" style="flex: 1; text-align: center; background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 15px; border-radius: 50px; font-weight: 700; font-size: 1rem; text-decoration: none; display: inline-block; box-shadow: 0 4px 12px rgba(46,204,113,0.3);"><i class="fas fa-file-signature"></i> Apply NOW / Đăng ký ngay</a>
+                    <a href="https://www.absoluteml.com/martin-nguyen" target="_blank" style="flex: 1; text-align: center; background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 12px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: inline-block; box-shadow: 0 4px 12px rgba(46,204,113,0.3);"><i class="fas fa-file-signature"></i> Apply NOW / Đăng ký ngay</a>
                 </div>
                 <div class="form-disclaimer">
                     By submitting, you consent to be contacted. For properties outside Texas, a licensed team member will assist you.
@@ -1199,19 +1188,19 @@
     </div>
 </section>
 
-<section id="privacy" style="padding: 50px 0; background: linear-gradient(135deg, #f8f9fc, #f0f4fa);">
+<section id="privacy" style="padding: 40px 0; background: linear-gradient(135deg, #f8f9fc, #f0f4fa);">
     <div class="container">
-        <h2 class="section-title" style="font-size: 1.5rem;">Privacy Policy</h2>
+        <h2 class="section-title" style="font-size: 1.3rem;">Privacy Policy</h2>
         <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <p>We collect personal information (name, email, phone, property state, questions) when you submit our contact form. This information is used only to respond to your loan inquiry. We do not sell or rent your information.</p>
+            <p style="font-size: 0.85rem;">We collect personal information (name, email, phone, property state, questions) when you submit our contact form. This information is used only to respond to your loan inquiry. We do not sell or rent your information.</p>
         </div>
     </div>
 </section>
 
-<section id="disclaimer" style="padding: 50px 0; background: white;">
+<section id="disclaimer" style="padding: 40px 0; background: white;">
     <div class="container">
-        <h2 class="section-title" style="font-size: 1.5rem;">Legal Disclaimers</h2>
-        <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 0.8rem; line-height: 1.6; color: #5a7a90;">
+        <h2 class="section-title" style="font-size: 1.3rem;">Legal Disclaimers</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 0.75rem; line-height: 1.5; color: #5a7a90;">
             <p><strong>Licensing:</strong> Martin Nguyen (NMLS #2684170) is licensed in Texas. Absolute Mortgage & Lending (AML FUNDING LLC, NMLS #1910591) has licensed loan originators in 41+ states and counting.</p>
             <p style="margin-top: 8px;">Clients outside Texas will be matched with a properly licensed team member. No guarantee of loan approval. Rates subject to change. Jumbo loan limits vary by area. Verify at <a href="https://www.nmlsconsumeraccess.org" target="_blank">www.nmlsconsumeraccess.org</a></p>
         </div>
@@ -1228,13 +1217,13 @@
             <a href="#contact">Contact</a>
         </div>
         
-        <div style="margin: 20px 0;">
-            <a href="https://www.absoluteml.com/martin-nguyen" target="_blank" style="background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 4px 12px rgba(46,204,113,0.3);"><i class="fas fa-paper-plane"></i> Apply NOW / Đăng ký ngay</a>
+        <div style="margin: 15px 0;">
+            <a href="https://www.absoluteml.com/martin-nguyen" target="_blank" style="background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 10px 24px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; box-shadow: 0 4px 12px rgba(46,204,113,0.3);"><i class="fas fa-paper-plane"></i> Apply NOW / Đăng ký ngay</a>
         </div>
         
         <img src="logo.png" alt="Absolute Mortgage & Lending" class="footer-logo-img" onerror="this.style.display='none'">
         
-        <div class="equal-housing" style="background: transparent; color: #b8d4e8; justify-content: center; margin: 0 auto 20px;">
+        <div class="equal-housing" style="background: transparent; color: #b8d4e8; justify-content: center; margin: 0 auto 15px;">
             <i class="fas fa-home"></i> Equal Housing Opportunity
         </div>
         <p><strong>Martin Nguyen</strong> | NMLS #2684170 | Licensed in Texas</p>
