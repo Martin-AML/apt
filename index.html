@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Martin Nguyen | Chuyên Viên Cho Vay Thế Chấp - Texas & Nationwide</title>
-    <meta name="description" content="Martin Nguyen - Chuyên viên cho vay tại Absolute Mortgage & Lending. Martin licensed in Texas. Team licensed in 43+ states nationwide. FHA, Conventional, VA, DSCR, Non-QM, Jumbo, USDA, Refinance and much more. NMLS #2684170">
+    <meta name="description" content="Martin Nguyen - Chuyên viên cho vay tại Absolute Mortgage & Lending. Martin licensed in Texas. Team licensed in 41+ states and counting nationwide. FHA, Conventional, VA, DSCR, Non-QM, Jumbo, USDA, Refinance and much more. NMLS #2684170">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
@@ -49,7 +49,6 @@
             gap: 20px;
             flex-wrap: wrap;
         }
-        /* COMPANY LOGO - USING YOUR logo.png */
         .company-logo-img {
             height: 60px;
             width: auto;
@@ -121,7 +120,6 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(230,126,34,0.4);
         }
-        /* Hero */
         .hero {
             padding: 70px 0 60px;
             position: relative;
@@ -248,19 +246,17 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(230,126,34,0.45);
         }
-        /* Headshot - ADJUSTED: moved lower for better hair visibility */
         .hero-headshot {
             text-align: center;
             position: relative;
-            /* Added a container shift: move the whole headshot block slightly downward */
-            transform: translateY(18px); /* ~ 1/4 of image height lowered (230px * 0.08 ≈ 18px) */
+            transform: translateY(18px);
         }
         .headshot-img {
             width: 230px;
             height: 230px;
             border-radius: 50%;
             object-fit: cover;
-            object-position: center 30%; /* Fine-tune focal point: shift vertical crop slightly lower to reveal more hair */
+            object-position: center 30%;
             border: 4px solid white;
             box-shadow: 0 25px 45px rgba(0,0,0,0.15);
             margin-bottom: 15px;
@@ -274,7 +270,6 @@
             color: transparent;
             font-weight: 700;
         }
-        /* Loan Types */
         .loan-types {
             padding: 80px 0;
             background: linear-gradient(135deg, #ffffff, #fefefa);
@@ -361,7 +356,6 @@
             color: #e67e22;
             font-weight: 800;
         }
-        /* Testimonials */
         .testimonials {
             padding: 60px 0;
             background: #fff;
@@ -386,7 +380,6 @@
             font-size: 2rem;
             margin-bottom: 10px;
         }
-        /* Calculator */
         .calculator {
             padding: 80px 0;
             background: linear-gradient(135deg, #fef5e8, #fefaf2);
@@ -442,7 +435,6 @@
             margin-top: 20px;
             color: #8a9eb0;
         }
-        /* Service Area */
         .service-area {
             padding: 60px 0;
             background: linear-gradient(135deg, #1a2c3e, #1f3d52);
@@ -454,59 +446,18 @@
             background-clip: text;
             color: transparent;
         }
-        .area-badges {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 14px;
-            margin-top: 30px;
+        .service-map-img {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border: 3px solid rgba(230,126,34,0.3);
+            transition: transform 0.3s ease;
+            background: #1a2c3e;
         }
-        .area-badge {
-            background: rgba(255,255,255,0.12);
-            backdrop-filter: blur(10px);
-            padding: 10px 24px;
-            border-radius: 50px;
-            font-weight: 600;
-            color: white;
-            font-size: 0.9rem;
-            transition: 0.3s;
+        .service-map-img:hover {
+            transform: scale(1.01);
         }
-        .area-badge:hover {
-            background: #e67e22;
-            transform: scale(1.02);
-        }
-        .area-badge-special {
-            background: linear-gradient(135deg, #e67e22, #f39c12);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 12px rgba(230,126,34,0.4);
-        }
-        /* Nationwide Message */
-        .nationwide-message {
-            text-align: center;
-            padding: 35px 30px;
-            background: linear-gradient(135deg, white, #fffef8);
-            border-radius: 32px;
-            margin: 40px 0;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            border: 1px solid rgba(230,126,34,0.15);
-        }
-        .nationwide-message p {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: #2c4e6e;
-        }
-        .nationwide-message p:first-child {
-            background: linear-gradient(135deg, #e67e22, #f39c12);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-size: 1.2rem;
-        }
-        /* Contact */
         .contact {
             padding: 80px 0;
             background: white;
@@ -618,7 +569,6 @@
             border-top: 1px solid #2a5a74;
             padding-top: 20px;
         }
-        /* Footer Logo */
         .footer-logo-img {
             height: 50px;
             width: auto;
@@ -634,13 +584,9 @@
             .section-title { font-size: 1.8rem; }
             .logo-section { justify-content: center; }
             .company-logo-img { height: 50px; }
-            /* adjust headshot container translation on mobile for subtle balance */
-            .hero-headshot {
-                transform: translateY(12px);
-            }
-            .headshot-img {
-                object-position: center 28%;
-            }
+            .hero-headshot { transform: translateY(12px); }
+            .headshot-img { object-position: center 28%; }
+            .service-map-img { border-radius: 16px; }
         }
     </style>
 </head>
@@ -650,7 +596,6 @@
     <div class="container">
         <div class="navbar">
             <div class="logo-section">
-                <!-- YOUR COMPANY LOGO - logo.png -->
                 <img src="logo.png" alt="Absolute Mortgage & Lending" class="company-logo-img" onerror="this.style.display='none'">
                 <div class="divider-vertical"></div>
                 <div class="logo">
@@ -684,7 +629,7 @@
                 <i class="fas fa-check-circle"></i> Martin Nguyen: Licensed in TEXAS | NMLS #2684170
             </div>
             <div class="license-badge-orange">
-                <i class="fas fa-users"></i> Our Team: Licensed in 43+ STATES nationwide
+                <i class="fas fa-users"></i> Our Team: Licensed in 41+ and counting nationwide
             </div>
             
             <div class="hero-contact">
@@ -697,7 +642,6 @@
         </div>
         
         <div class="hero-headshot">
-            <!-- YOUR HEADSHOT - martin-headshot.png: adjusted position downward and fine-tuned crop to show full hair -->
             <img src="martin-headshot.png" alt="Martin Nguyen" class="headshot-img" onerror="this.src='https://ui-avatars.com/api/?background=e67e22&color=fff&rounded=true&size=230&name=Martin+Nguyen&bold=true'">
             <div class="headshot-caption">
                 <i class="fas fa-user-tie"></i> Martin Nguyen<br>
@@ -714,33 +658,19 @@
     </div>
 </div>
 
+<!-- SERVICE AREA SECTION WITH YOUR MAP -->
 <section class="service-area">
     <div class="container">
         <h2 class="section-title">🌎 Where We Serve</h2>
         
-        <div style="background: rgba(255,255,255,0.05); border-radius: 28px; padding: 25px; margin-top: 20px;">
-            <h3 style="color: #f39c12; margin-bottom: 10px;"><i class="fas fa-user-check"></i> Martin Nguyen:</h3>
-            <div class="area-badges" style="margin-top: 5px;">
-                <span class="area-badge-special"><i class="fas fa-star"></i> Texas</span>
-            </div>
-            
-            <h3 style="color: #f39c12; margin: 30px 0 10px 0;"><i class="fas fa-flag-usa"></i> Our Team (43+ States):</h3>
-            <div class="area-badges">
-                <span class="area-badge">Texas</span>
-                <span class="area-badge">California</span>
-                <span class="area-badge">Florida</span>
-                <span class="area-badge">New York</span>
-                <span class="area-badge">Georgia</span>
-                <span class="area-badge">Washington</span>
-                <span class="area-badge">Arizona</span>
-                <span class="area-badge">Nevada</span>
-                <span class="area-badge">Virginia</span>
-                <span class="area-badge">Colorado</span>
-                <span class="area-badge">Illinois</span>
-                <span class="area-badge">Massachusetts</span>
-                <span class="area-badge">North Carolina</span>
-                <span class="area-badge">+ 33 more states</span>
-            </div>
+        <!-- YOUR MAP IMAGE - servemap.png -->
+        <div style="margin: 30px auto; max-width: 900px; text-align: center;">
+            <img src="servemap.png" 
+                 alt="Service Area Map - Martin licensed in Texas, Team licensed in 41+ states and counting" 
+                 class="service-map-img">
+            <p style="color: #f39c12; margin-top: 20px; font-size: 0.95rem;">
+                <i class="fas fa-map-marked-alt"></i> Martin Nguyen licensed in Texas | Our team licensed in 41+ and counting nationwide
+            </p>
         </div>
     </div>
 </section>
@@ -797,7 +727,6 @@
             </div>
         </div>
         
-        <!-- AND MUCH MORE SECTION -->
         <div class="more-loans">
             <p><i class="fas fa-gem" style="color: #e67e22;"></i> <span>and much more...</span></p>
             <p style="font-size: 1rem; margin-top: 10px;">✓ Renovation Loans (FHA 203k, Homestyle)  ✓ Bridge Loans  ✓ Construction Loans<br>✓ Bank Statement Loans  ✓ Asset Depletion Loans  ✓ Second Homes & Investment Properties</p>
@@ -806,7 +735,6 @@
     </div>
 </section>
 
-<!-- Testimonials Section -->
 <section class="testimonials">
     <div class="container">
         <h2 class="section-title">⭐ Client Success Stories</h2>
@@ -870,7 +798,7 @@
                 <p><i class="fas fa-map-marker-alt"></i> 4230 Lyndon B Johnson Fwy Ste 625 & 626, Dallas, TX 75244</p>
                 <hr style="margin: 20px 0; border-color: #f0dcc8;">
                 <p><i class="fas fa-id-card"></i> <strong>Martin Nguyen</strong> | NMLS #2684170 | Licensed in Texas</p>
-                <p><i class="fas fa-users"></i> <strong>Our Team:</strong> Licensed in 43+ states nationwide</p>
+                <p><i class="fas fa-users"></i> <strong>Our Team:</strong> Licensed in 41+ and counting nationwide</p>
                 <div class="equal-housing">
                     <i class="fas fa-home"></i> Equal Housing Opportunity
                 </div>
@@ -930,7 +858,7 @@
     <div class="container">
         <h2 class="section-title" style="font-size: 1.5rem;">Legal Disclaimers</h2>
         <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 0.8rem; line-height: 1.6; color: #5a7a90;">
-            <p><strong>Licensing:</strong> Martin Nguyen (NMLS #2684170) is licensed in Texas. Absolute Mortgage & Lending (AML FUNDING LLC, NMLS #1910591) has licensed loan originators in 43+ states.</p>
+            <p><strong>Licensing:</strong> Martin Nguyen (NMLS #2684170) is licensed in Texas. Absolute Mortgage & Lending (AML FUNDING LLC, NMLS #1910591) has licensed loan originators in 41+ states and counting.</p>
             <p style="margin-top: 8px;">Clients outside Texas will be matched with a properly licensed team member. No guarantee of loan approval. Rates subject to change. Jumbo loan limits vary by area. Verify at <a href="https://www.nmlsconsumeraccess.org" target="_blank">www.nmlsconsumeraccess.org</a></p>
         </div>
     </div>
@@ -946,7 +874,6 @@
             <a href="#contact">Contact</a>
         </div>
         
-        <!-- Footer Logo -->
         <img src="logo.png" alt="Absolute Mortgage & Lending" class="footer-logo-img" onerror="this.style.display='none'">
         
         <div class="equal-housing" style="background: transparent; color: #b8d4e8; justify-content: center; margin: 0 auto 20px;">
@@ -991,7 +918,6 @@
     updateMonthly();
 </script>
 
-<!-- JSON-LD Schema for Local Business -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
