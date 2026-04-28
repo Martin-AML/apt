@@ -27,7 +27,7 @@
             margin: 0 auto;
             padding: 0 24px;
         }
-        /* Header - COMPACT VERSION */
+        /* Header */
         header {
             background: rgba(255,255,255,0.98);
             backdrop-filter: blur(10px);
@@ -414,18 +414,24 @@
             font-size: 1.8rem;
             margin-bottom: 8px;
         }
+        /* 2-COLUMN CALCULATOR STYLES */
         .calculator {
             padding: 60px 0;
             background: linear-gradient(135deg, #fef5e8, #fefaf2);
         }
         .calc-box {
-            max-width: 600px;
+            max-width: 950px;
             margin: 0 auto;
             background: white;
             padding: 35px;
             border-radius: 40px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.08);
             border: 1px solid rgba(230,126,34,0.2);
+        }
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
         }
         .input-group {
             margin-bottom: 20px;
@@ -435,31 +441,35 @@
             display: block;
             margin-bottom: 8px;
             color: #1a2c3e;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
-        .input-group input {
+        .input-group input, .input-group select {
             width: 100%;
-            padding: 12px 18px;
+            padding: 12px 16px;
             border-radius: 40px;
             border: 2px solid #e8eef3;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: 0.2s;
             font-weight: 500;
+            background: white;
         }
-        .input-group input:focus {
+        .input-group input:focus, .input-group select:focus {
             outline: none;
             border-color: #e67e22;
             box-shadow: 0 0 0 3px rgba(230,126,34,0.1);
         }
+        .full-width {
+            grid-column: span 2;
+        }
         .term-options {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 8px;
+            gap: 10px;
+            margin-top: 5px;
         }
         .term-option {
             flex: 1;
-            min-width: 65px;
+            min-width: 60px;
         }
         .term-option input {
             display: none;
@@ -467,7 +477,7 @@
         .term-option label {
             display: block;
             text-align: center;
-            padding: 10px 16px;
+            padding: 10px 12px;
             background: #f0f4fa;
             border-radius: 50px;
             font-weight: 600;
@@ -475,7 +485,7 @@
             transition: all 0.3s ease;
             border: 2px solid transparent;
             margin-bottom: 0;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
         .term-option input:checked + label {
             background: linear-gradient(135deg, #e67e22, #f39c12);
@@ -490,7 +500,7 @@
             background: #f8f9fc;
             padding: 12px;
             border-radius: 20px;
-            margin: 12px 0;
+            margin: 10px 0;
             text-align: center;
             font-weight: 600;
             color: #2c4e6e;
@@ -502,7 +512,7 @@
             padding: 25px;
             border-radius: 32px;
             text-align: center;
-            margin-top: 12px;
+            margin-top: 15px;
         }
         .monthly-payment {
             font-size: 2rem;
@@ -514,6 +524,64 @@
             text-align: center;
             margin-top: 15px;
             color: #8a9eb0;
+        }
+        /* Toggle Switch Styles */
+        .toggle-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f8f9fc;
+            padding: 12px 16px;
+            border-radius: 50px;
+            margin-bottom: 15px;
+        }
+        .toggle-group label {
+            font-weight: 600;
+            margin-bottom: 0;
+            font-size: 0.85rem;
+        }
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 52px;
+            height: 26px;
+        }
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.3s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        .disabled-input {
+            opacity: 0.5;
+            pointer-events: none;
         }
         .service-area {
             padding: 50px 0;
@@ -660,243 +728,49 @@
             opacity: 0.9;
         }
         
-        /* ============================================ */
-        /* COMPACT MOBILE HEADER - Only 1/6 of screen */
-        /* ============================================ */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            /* Mobile header - VERY COMPACT */
-            .navbar {
-                padding: 8px 0;
-                gap: 8px;
-            }
-            .logo-section {
-                gap: 8px;
-                justify-content: center;
-                width: 100%;
-            }
-            .company-logo-img {
-                height: 35px;
-            }
-            .divider-vertical {
-                height: 30px;
-                margin: 0 2px;
-            }
-            .logo h1 {
-                font-size: 0.95rem;
-            }
-            .logo p {
-                font-size: 0.5rem;
-            }
-            .nmls-badge {
-                padding: 2px 8px;
-                font-size: 0.5rem;
-            }
-            .nav-links {
-                justify-content: center;
-                gap: 12px;
-                width: 100%;
-            }
-            .nav-links a {
-                font-size: 0.7rem;
-                padding: 4px 0;
-            }
-            .btn-call {
-                padding: 4px 12px;
-                font-size: 0.7rem;
-                gap: 4px;
-            }
-            
-            /* Hero section - reduced top margin */
-            .hero {
-                padding: 25px 0 40px;
-            }
-            .hero-content h1 {
-                font-size: 1.6rem;
-                margin: 10px 0 8px;
-            }
-            .hero-content h1:last-of-type {
-                font-size: 1.3rem;
-            }
-            
-            /* Rest of mobile styles remain */
-            .section-title { 
-                font-size: 1.6rem; 
-            }
-            .hero-contact p {
-                font-size: 0.8rem;
-            }
-            .hero-contact {
-                padding: 16px;
-            }
-            .hero-grid {
-                flex-direction: column;
-                text-align: center;
-                gap: 25px;
-            }
-            .hero-content {
-                order: 1;
-            }
-            .hero-headshot {
-                order: 2;
-                transform: translateY(0);
-            }
-            .headshot-img { 
-                width: 140px; 
-                height: 140px; 
-                object-position: center 28%;
-            }
-            .button-group {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .btn-primary, .btn-apply {
-                width: 100%;
-                justify-content: center;
-                padding: 10px 16px;
-                font-size: 0.85rem;
-            }
-            .license-badge, .license-badge-orange {
-                display: block;
-                text-align: center;
-                margin: 8px 0;
-                font-size: 0.7rem;
-                padding: 6px 12px;
-            }
-            .cards-grid {
-                gap: 16px;
-            }
-            .loan-card {
-                flex: 1 1 100%;
-                padding: 20px 16px;
-            }
-            .loan-card h3 {
-                font-size: 1.2rem;
-            }
-            .loan-card i {
-                font-size: 2rem;
-            }
-            .service-map-img {
-                border-radius: 16px;
-            }
-            .calc-box {
-                padding: 20px;
-            }
-            .term-options {
-                gap: 8px;
-            }
-            .term-option label {
-                padding: 8px 10px;
-                font-size: 0.75rem;
-            }
-            .monthly-payment {
-                font-size: 1.6rem;
-            }
-            .calc-result {
-                padding: 16px;
-            }
-            .contact-form input, 
-            .contact-form select, 
-            .contact-form textarea {
-                font-size: 14px;
-                padding: 10px 14px;
-            }
-            .contact-form {
-                padding: 20px;
-            }
-            .contact-card {
-                padding: 16px;
-            }
-            .contact-card p {
-                font-size: 0.8rem;
-            }
-            .testimonial-card {
-                padding: 16px;
-            }
-            .testimonial-card p {
-                font-size: 0.85rem;
-            }
-            .more-loans {
-                padding: 16px;
-            }
-            .more-loans p {
-                font-size: 0.95rem;
-            }
-            footer {
-                padding: 25px 15px;
-            }
-            footer .footer-links {
-                gap: 15px;
-            }
-            footer .footer-links a {
-                font-size: 0.7rem;
-            }
-            .footer-logo-img {
-                height: 35px;
-            }
-            .nationwide-message {
-                padding: 15px;
-                margin: 15px 0;
-            }
-            .nationwide-message p {
-                font-size: 0.85rem;
-            }
-            .hero-badge {
-                font-size: 0.6rem;
-                padding: 3px 10px;
-            }
+            .navbar { padding: 8px 0; gap: 8px; }
+            .logo-section { gap: 8px; justify-content: center; width: 100%; }
+            .company-logo-img { height: 35px; }
+            .divider-vertical { height: 30px; margin: 0 2px; }
+            .logo h1 { font-size: 0.95rem; }
+            .logo p { font-size: 0.5rem; }
+            .nmls-badge { padding: 2px 8px; font-size: 0.5rem; }
+            .nav-links { justify-content: center; gap: 12px; width: 100%; }
+            .nav-links a { font-size: 0.7rem; padding: 4px 0; }
+            .btn-call { padding: 4px 12px; font-size: 0.7rem; gap: 4px; }
+            .hero { padding: 25px 0 40px; }
+            .hero-content h1 { font-size: 1.6rem; margin: 10px 0 8px; }
+            .section-title { font-size: 1.6rem; }
+            .hero-contact p { font-size: 0.8rem; }
+            .hero-contact { padding: 16px; }
+            .hero-grid { flex-direction: column; text-align: center; gap: 25px; }
+            .hero-content { order: 1; }
+            .hero-headshot { order: 2; transform: translateY(0); }
+            .headshot-img { width: 140px; height: 140px; }
+            .button-group { flex-direction: column; gap: 10px; }
+            .btn-primary, .btn-apply { width: 100%; justify-content: center; padding: 10px 16px; font-size: 0.85rem; }
+            .license-badge, .license-badge-orange { display: block; text-align: center; margin: 8px 0; font-size: 0.7rem; padding: 6px 12px; }
+            .calc-grid { grid-template-columns: 1fr; gap: 15px; }
+            .calc-box { padding: 20px; }
+            .full-width { grid-column: span 1; }
+            .term-options { gap: 8px; }
+            .term-option label { padding: 8px 10px; font-size: 0.75rem; }
+            .monthly-payment { font-size: 1.6rem; }
+            .contact-form input, .contact-form select, .contact-form textarea { font-size: 14px; padding: 10px 14px; }
+            .contact-form { padding: 20px; }
         }
         
-        /* Extra small devices */
         @media (max-width: 480px) {
-            .container {
-                padding: 0 16px;
-            }
-            .hero {
-                padding: 20px 0 30px;
-            }
-            .section-title {
-                font-size: 1.4rem;
-            }
-            .loan-tagline {
-                font-size: 0.7rem;
-                padding: 5px 12px;
-            }
-            .term-option label {
-                padding: 6px 8px;
-                font-size: 0.7rem;
-            }
-            .loan-info-row {
-                font-size: 0.8rem;
-            }
+            .container { padding: 0 16px; }
+            .section-title { font-size: 1.4rem; }
+            .term-option label { padding: 6px 8px; font-size: 0.7rem; }
         }
         
-        /* Touch-friendly improvements */
-        button, 
-        .btn-primary, 
-        .btn-apply, 
-        .btn-call,
-        .nav-links a,
-        .term-option label,
-        .contact-form button,
-        footer a {
+        button, .btn-primary, .btn-apply, .btn-call, .nav-links a, .term-option label, .contact-form button, footer a {
             cursor: pointer;
             -webkit-tap-highlight-color: transparent;
-        }
-        
-        @media (max-width: 768px) {
-            button, 
-            .btn-primary, 
-            .btn-apply, 
-            .btn-call,
-            .nav-links a,
-            .term-option label,
-            .contact-form button,
-            footer a {
-                min-height: 40px;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-            }
         }
     </style>
 </head>
@@ -925,7 +799,6 @@
     </div>
 </header>
 
-<!-- REST OF YOUR CONTENT REMAINS THE SAME -->
 <section class="hero">
     <div class="container hero-grid">
         <div class="hero-content">
@@ -977,9 +850,7 @@
     <div class="container">
         <h2 class="section-title">🌎 Where We Serve</h2>
         <div style="margin: 30px auto; max-width: 900px; text-align: center;">
-            <img src="servemap.png" 
-                 alt="Service Area Map - Martin licensed in Texas, Team licensed in 41+ states and counting" 
-                 class="service-map-img">
+            <img src="servemap.png" alt="Service Area Map" class="service-map-img">
             <p style="color: #f39c12; margin-top: 20px; font-size: 0.9rem;">
                 <i class="fas fa-map-marked-alt"></i> Martin Nguyen licensed in Texas | Our team licensed in 41+ and counting nationwide
             </p>
@@ -997,52 +868,19 @@
         </div>
         <p class="section-sub">We offer a complete range of mortgage solutions tailored to your unique financial situation. From first-time homebuyers to real estate investors — we have the right loan for you.</p>
         <div class="cards-grid">
-            <div class="loan-card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Conventional</h3>
-                <p>Vay thông thường, trả trước 3%-5%. Điểm tín dụng 620+.<br>Conventional loans – 3-5% down, credit 620+.</p>
-            </div>
-            <div class="loan-card">
-                <i class="fas fa-flag-usa"></i>
-                <h3>FHA Loan</h3>
-                <p>Chính phủ bảo lãnh. Trả trước 3.5%, điểm tín dụng từ 580.<br>FHA – 3.5% down, credit as low as 580.</p>
-            </div>
-            <div class="loan-card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>VA Loan</h3>
-                <p>Dành cho quân nhân và cựu chiến binh. <strong>0% down</strong>.<br>VA loans for veterans – 0% down, no MI.</p>
-            </div>
-            <div class="loan-card">
-                <i class="fas fa-building"></i>
-                <h3>DSCR Loan</h3>
-                <p>Vay theo dòng tiền cho thuê. KHÔNG cần chứng minh thu nhập.<br>DSCR – No tax returns, rental income qualifies.</p>
-            </div>
-            <div class="loan-card">
-                <i class="fas fa-file-invoice"></i>
-                <h3>Non-QM</h3>
-                <p>Dành cho self-employed, ITIN, người mới qua Mỹ.<br>For self-employed, ITIN, foreign nationals.</p>
-            </div>
-            <div class="loan-card">
-                <i class="fas fa-chart-simple"></i>
-                <h3>Jumbo Loan</h3>
-                <p>Vay trên giới hạn Conventional. Hạn mức thay đổi theo khu vực.<br>Above conforming limits. Limits vary by area.</p>
-            </div>
-            <div class="loan-card">
-                <i class="fas fa-tree"></i>
-                <h3>USDA Loan</h3>
-                <p>Vay liên bang cho khu vực ngoại ô. <strong>0% down</strong>.<br>USDA loans – 0% down for rural areas.</p>
-            </div>
-            <div class="loan-card">
-                <i class="fas fa-hand-holding-usd"></i>
-                <h3>Refinance</h3>
-                <p>Tái cấp vốn để giảm lãi suất hoặc rút tiền mặt.<br>Lower your rate or cash out equity.</p>
-            </div>
+            <div class="loan-card"><i class="fas fa-chart-line"></i><h3>Conventional</h3><p>Vay thông thường, trả trước 3%-5%. Điểm tín dụng 620+.<br>Conventional loans – 3-5% down, credit 620+.</p></div>
+            <div class="loan-card"><i class="fas fa-flag-usa"></i><h3>FHA Loan</h3><p>Chính phủ bảo lãnh. Trả trước 3.5%, điểm tín dụng từ 580.<br>FHA – 3.5% down, credit as low as 580.</p></div>
+            <div class="loan-card"><i class="fas fa-shield-alt"></i><h3>VA Loan</h3><p>Dành cho quân nhân và cựu chiến binh. <strong>0% down</strong>.<br>VA loans for veterans – 0% down, no MI.</p></div>
+            <div class="loan-card"><i class="fas fa-building"></i><h3>DSCR Loan</h3><p>Vay theo dòng tiền cho thuê. KHÔNG cần chứng minh thu nhập.<br>DSCR – No tax returns, rental income qualifies.</p></div>
+            <div class="loan-card"><i class="fas fa-file-invoice"></i><h3>Non-QM</h3><p>Dành cho self-employed, ITIN, người mới qua Mỹ.<br>For self-employed, ITIN, foreign nationals.</p></div>
+            <div class="loan-card"><i class="fas fa-chart-simple"></i><h3>Jumbo Loan</h3><p>Vay trên giới hạn Conventional. Hạn mức thay đổi theo khu vực.<br>Above conforming limits. Limits vary by area.</p></div>
+            <div class="loan-card"><i class="fas fa-tree"></i><h3>USDA Loan</h3><p>Vay liên bang cho khu vực ngoại ô. <strong>0% down</strong>.<br>USDA loans – 0% down for rural areas.</p></div>
+            <div class="loan-card"><i class="fas fa-hand-holding-usd"></i><h3>Refinance</h3><p>Tái cấp vốn để giảm lãi suất hoặc rút tiền mặt.<br>Lower your rate or cash out equity.</p></div>
         </div>
-        
         <div class="more-loans">
             <p><i class="fas fa-gem" style="color: #e67e22;"></i> <span>and much more...</span></p>
-            <p style="font-size: 1rem; margin-top: 10px;">✓ Renovation Loans (FHA 203k, Homestyle)  ✓ Bridge Loans  ✓ Construction Loans<br>✓ Bank Statement Loans  ✓ Asset Depletion Loans  ✓ Second Homes & Investment Properties</p>
-            <p style="margin-top: 15px; font-size: 0.9rem; color: #e67e22;"><i class="fas fa-phone-alt"></i> Ask us about any loan program — if it exists, we can help you get it!</p>
+            <p>✓ Renovation Loans (FHA 203k, Homestyle)  ✓ Bridge Loans  ✓ Construction Loans<br>✓ Bank Statement Loans  ✓ Asset Depletion Loans  ✓ Second Homes & Investment Properties</p>
+            <p style="margin-top: 15px; color: #e67e22;"><i class="fas fa-phone-alt"></i> Ask us about any loan program — if it exists, we can help you get it!</p>
         </div>
     </div>
 </section>
@@ -1051,76 +889,113 @@
     <div class="container">
         <h2 class="section-title">⭐ Client Success Stories</h2>
         <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <i class="fas fa-quote-left"></i>
-                <p>"Martin helped me buy my first home in Dallas. He explained everything in Vietnamese and English. 5 stars!"</p>
-                <h4>- Thanh L.</h4>
-            </div>
-            <div class="testimonial-card">
-                <i class="fas fa-quote-left"></i>
-                <p>"The DSCR loan process was smooth. Martin's team funded my rental property in Florida within 3 weeks."</p>
-                <h4>- Robert K.</h4>
-            </div>
-            <div class="testimonial-card">
-                <i class="fas fa-quote-left"></i>
-                <p>"As a veteran, the VA loan with 0% down was a lifesaver. Martin is responsive and professional."</p>
-                <h4>- James M.</h4>
-            </div>
+            <div class="testimonial-card"><i class="fas fa-quote-left"></i><p>"Martin helped me buy my first home in Dallas. He explained everything in Vietnamese and English. 5 stars!"</p><h4>- Thanh L.</h4></div>
+            <div class="testimonial-card"><i class="fas fa-quote-left"></i><p>"The DSCR loan process was smooth. Martin's team funded my rental property in Florida within 3 weeks."</p><h4>- Robert K.</h4></div>
+            <div class="testimonial-card"><i class="fas fa-quote-left"></i><p>"As a veteran, the VA loan with 0% down was a lifesaver. Martin is responsive and professional."</p><h4>- James M.</h4></div>
         </div>
     </div>
 </section>
 
+<!-- 2-COLUMN CALCULATOR WITH TOGGLE SWITCHES -->
 <section id="calculator" class="calculator">
     <div class="container">
         <h2 class="section-title">📐 Mortgage Calculator</h2>
         <div class="calc-box">
-            <div class="input-group">
-                <label>🏠 Purchase Amount / Giá trị căn nhà</label>
-                <input type="number" id="purchaseAmount" value="400000" step="10000" placeholder="Purchase price">
-            </div>
-            <div class="input-group">
-                <label>💰 Down Payment Amount / Số tiền trả trước</label>
-                <input type="number" id="downPayment" value="50000" step="5000" placeholder="Down payment">
-            </div>
-            
-            <div class="loan-info-row" id="loanInfoDisplay">
-                Loan Amount / Số tiền vay: $350,000
-            </div>
-            
-            <div class="input-group">
-                <label>📈 Interest Rate / Lãi suất năm (%)</label>
-                <input type="number" id="interestRate" value="6.5" step="0.125">
-            </div>
-            
-            <div class="input-group">
-                <label>⏱️ Loan Term / Thời gian vay</label>
-                <div class="term-options">
-                    <div class="term-option">
-                        <input type="radio" name="loanTerm" id="term10" value="10">
-                        <label for="term10">10 năm</label>
+            <div class="calc-grid">
+                <!-- Column 1 -->
+                <div>
+                    <div class="input-group">
+                        <label>🏠 Purchase Amount / Giá trị căn nhà</label>
+                        <input type="number" id="purchaseAmount" value="400000" step="10000">
                     </div>
-                    <div class="term-option">
-                        <input type="radio" name="loanTerm" id="term15" value="15">
-                        <label for="term15">15 năm</label>
+                    <div class="input-group">
+                        <label>💰 Down Payment / Số tiền trả trước</label>
+                        <input type="number" id="downPayment" value="50000" step="5000">
                     </div>
-                    <div class="term-option">
-                        <input type="radio" name="loanTerm" id="term20" value="20">
-                        <label for="term20">20 năm</label>
+                    <div class="input-group">
+                        <label>📍 Property Location</label>
+                        <select id="propertyCounty">
+                            <option value="">-- Select County --</option>
+                            <option value="1.80">Harris County (Houston) - 1.80%</option>
+                            <option value="2.30">Dallas County - 2.30%</option>
+                            <option value="2.20">Tarrant County - 2.20%</option>
+                            <option value="2.10">Bexar County - 2.10%</option>
+                            <option value="1.90">Travis County (Austin) - 1.90%</option>
+                            <option value="2.40">Collin County - 2.40%</option>
+                            <option value="2.35">Denton County - 2.35%</option>
+                            <option value="2.15">Fort Bend County - 2.15%</option>
+                            <option value="2.25">Montgomery County - 2.25%</option>
+                            <option value="2.00">Williamson County - 2.00%</option>
+                            <option value="1.75">El Paso County - 1.75%</option>
+                            <option value="2.05">Hidalgo County - 2.05%</option>
+                            <option value="2.50">Other Texas County - 2.50%</option>
+                        </select>
                     </div>
-                    <div class="term-option">
-                        <input type="radio" name="loanTerm" id="term30" value="30" checked>
-                        <label for="term30">30 năm</label>
+                    <div class="input-group">
+                        <label>📮 Or enter ZIP code</label>
+                        <input type="text" id="propertyZip" placeholder="e.g., 75201">
+                    </div>
+                    <div class="input-group">
+                        <label>📈 Interest Rate (%)</label>
+                        <input type="number" id="interestRate" value="6.5" step="0.125">
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div>
+                    <div class="toggle-group">
+                        <label><i class="fas fa-home"></i> Include Property Tax?</label>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="toggleTax" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="input-group" id="taxInputGroup">
+                        <label>🏠 Annual Property Tax ($)</label>
+                        <input type="number" id="propertyTax" value="0" step="500" placeholder="Auto or manual">
+                    </div>
+                    
+                    <div class="toggle-group">
+                        <label><i class="fas fa-shield-alt"></i> Include Home Insurance?</label>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="toggleInsurance" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="input-group" id="insuranceInputGroup">
+                        <label>🛡️ Annual Home Insurance ($)</label>
+                        <input type="number" id="homeInsurance" value="1200" step="100">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>⏱️ Loan Term</label>
+                        <div class="term-options">
+                            <div class="term-option"><input type="radio" name="loanTerm" id="term10" value="10"><label for="term10">10 năm</label></div>
+                            <div class="term-option"><input type="radio" name="loanTerm" id="term15" value="15"><label for="term15">15 năm</label></div>
+                            <div class="term-option"><input type="radio" name="loanTerm" id="term20" value="20"><label for="term20">20 năm</label></div>
+                            <div class="term-option"><input type="radio" name="loanTerm" id="term30" value="30" checked><label for="term30">30 năm</label></div>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="calc-result">
-                <div>💵 Estimated Monthly Payment / Trả góp hàng tháng</div>
-                <div class="monthly-payment" id="monthlyDisplay">$0</div>
-                <small>Principal + Interest (before taxes & insurance)</small>
-            </div>
-            <div class="calc-disclaimer">
-                <i class="fas fa-info-circle"></i> Estimate only. Actual payment may vary.
+            <!-- Full Width Section -->
+            <div class="full-width">
+                <div class="loan-info-row" id="loanInfoDisplay">
+                    Loan Amount: $350,000
+                </div>
+                <div class="loan-info-row" id="propertyTaxDisplay" style="background: #eef2fa;">
+                    📊 Property Tax Rate: -- | Annual Tax: --
+                </div>
+                
+                <div class="calc-result">
+                    <div>💵 Estimated Monthly Payment</div>
+                    <div class="monthly-payment" id="monthlyDisplay">$0</div>
+                    <small id="paymentBreakdown">Principal + Interest</small>
+                </div>
+                <div class="calc-disclaimer">
+                    <i class="fas fa-info-circle"></i> Estimate only. Toggle tax/insurance on/off as needed.
+                </div>
             </div>
         </div>
     </div>
@@ -1139,145 +1014,216 @@
                 <hr style="margin: 15px 0; border-color: #f0dcc8;">
                 <p><i class="fas fa-id-card"></i> <strong>Martin Nguyen</strong> | NMLS #2684170 | Licensed in Texas</p>
                 <p><i class="fas fa-users"></i> <strong>Our Team:</strong> Licensed in 41+ and counting nationwide</p>
-                <div class="equal-housing">
-                    <i class="fas fa-home"></i> Equal Housing Opportunity
-                </div>
+                <div class="equal-housing"><i class="fas fa-home"></i> Equal Housing Opportunity</div>
             </div>
         </div>
         <div class="contact-form">
             <h3 style="margin-bottom: 15px; color: #1a2c3e; font-size: 1.2rem;">✨ Free Consultation</h3>
             <form id="leadForm" name="contact" method="POST" data-netlify="true">
                 <input type="hidden" name="form-name" value="contact" />
-                <input type="text" name="Full Name" placeholder="Full Name / Họ và tên *" required id="fullName">
-                <input type="email" name="Email" placeholder="Email Address *" required id="email">
-                <input type="tel" name="Phone" placeholder="Phone Number / Số điện thoại *" required id="phone">
-                
-                <select name="Loan Interest" id="loanInterest" required>
-                    <option value="">-- Select Loan Program / Chọn gói vay --</option>
-                    <option>Conventional</option>
-                    <option>FHA</option>
-                    <option>VA (0% down)</option>
-                    <option>DSCR (Rental / Đầu tư)</option>
-                    <option>Non-QM / ITIN</option>
-                    <option>Jumbo</option>
-                    <option>USDA (0% down)</option>
-                    <option>Refinance</option>
-                    <option>Other (please specify in questions)</option>
+                <input type="text" name="Full Name" placeholder="Full Name / Họ và tên *" required>
+                <input type="email" name="Email" placeholder="Email Address *" required>
+                <input type="tel" name="Phone" placeholder="Phone Number / Số điện thoại *" required>
+                <select name="Loan Interest" required>
+                    <option value="">-- Select Loan Program --</option>
+                    <option>Conventional</option><option>FHA</option><option>VA (0% down)</option>
+                    <option>DSCR (Rental)</option><option>Non-QM / ITIN</option><option>Jumbo</option>
+                    <option>USDA (0% down)</option><option>Refinance</option><option>Other</option>
                 </select>
-                
-                <select name="Property State" id="propertyState">
-                    <option value="">-- Property State / Tiểu bang --</option>
+                <select name="Property State">
+                    <option value="">-- Property State --</option>
                     <option>Texas (TX)</option><option>California (CA)</option><option>Florida (FL)</option>
                     <option>New York (NY)</option><option>Georgia (GA)</option><option>Washington (WA)</option>
                     <option>Arizona (AZ)</option><option>Nevada (NV)</option><option>Virginia (VA)</option>
                     <option>Colorado (CO)</option><option>Illinois (IL)</option><option>Massachusetts (MA)</option>
                     <option>North Carolina (NC)</option><option>Other</option>
                 </select>
-                
-                <textarea name="Questions" id="questions" rows="3" placeholder="💬 Your Questions / Câu hỏi của bạn..."></textarea>
-                
+                <textarea name="Questions" rows="3" placeholder="💬 Your Questions..."></textarea>
                 <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                    <button type="submit" style="flex: 1;"><i class="fas fa-paper-plane"></i> Send Request / Gửi yêu cầu</button>
-                    <a href="https://www.absoluteml.com/martin-nguyen" target="_blank" style="flex: 1; text-align: center; background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 12px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: inline-block; box-shadow: 0 4px 12px rgba(46,204,113,0.3);"><i class="fas fa-file-signature"></i> Apply NOW / Đăng ký ngay</a>
+                    <button type="submit" style="flex: 1;"><i class="fas fa-paper-plane"></i> Send Request</button>
+                    <a href="https://www.absoluteml.com/martin-nguyen" target="_blank" style="flex: 1; text-align: center; background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 12px; border-radius: 50px; font-weight: 700; text-decoration: none;"><i class="fas fa-file-signature"></i> Apply NOW</a>
                 </div>
-                <div class="form-disclaimer">
-                    By submitting, you consent to be contacted. For properties outside Texas, a licensed team member will assist you.
-                </div>
+                <div class="form-disclaimer">By submitting, you consent to be contacted.</div>
             </form>
         </div>
     </div>
 </section>
 
 <section id="privacy" style="padding: 40px 0; background: linear-gradient(135deg, #f8f9fc, #f0f4fa);">
-    <div class="container">
-        <h2 class="section-title" style="font-size: 1.3rem;">Privacy Policy</h2>
-        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <p style="font-size: 0.85rem;">We collect personal information (name, email, phone, property state, questions) when you submit our contact form. This information is used only to respond to your loan inquiry. We do not sell or rent your information.</p>
-        </div>
+    <div class="container"><h2 class="section-title" style="font-size: 1.3rem;">Privacy Policy</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;"><p style="font-size: 0.85rem;">We collect personal information (name, email, phone, property state, questions) when you submit our contact form. This information is used only to respond to your loan inquiry. We do not sell or rent your information.</p></div>
     </div>
 </section>
 
 <section id="disclaimer" style="padding: 40px 0; background: white;">
-    <div class="container">
-        <h2 class="section-title" style="font-size: 1.3rem;">Legal Disclaimers</h2>
-        <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 0.75rem; line-height: 1.5; color: #5a7a90;">
+    <div class="container"><h2 class="section-title" style="font-size: 1.3rem;">Legal Disclaimers</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 0.75rem; color: #5a7a90;">
             <p><strong>Licensing:</strong> Martin Nguyen (NMLS #2684170) is licensed in Texas. Absolute Mortgage & Lending (AML FUNDING LLC, NMLS #1910591) has licensed loan originators in 41+ states and counting.</p>
-            <p style="margin-top: 8px;">Clients outside Texas will be matched with a properly licensed team member. No guarantee of loan approval. Rates subject to change. Jumbo loan limits vary by area. Verify at <a href="https://www.nmlsconsumeraccess.org" target="_blank">www.nmlsconsumeraccess.org</a></p>
+            <p style="margin-top: 8px;">Clients outside Texas will be matched with a properly licensed team member. No guarantee of loan approval. Rates subject to change. Verify at <a href="https://www.nmlsconsumeraccess.org" target="_blank">www.nmlsconsumeraccess.org</a></p>
         </div>
     </div>
 </section>
 
 <footer>
     <div class="container">
-        <div class="footer-links">
-            <a href="#">Home</a>
-            <a href="#loans">Loan Programs</a>
-            <a href="#privacy">Privacy</a>
-            <a href="#disclaimer">Disclaimers</a>
-            <a href="#contact">Contact</a>
-        </div>
-        
-        <div style="margin: 15px 0;">
-            <a href="https://www.absoluteml.com/martin-nguyen" target="_blank" style="background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 10px 24px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; box-shadow: 0 4px 12px rgba(46,204,113,0.3);"><i class="fas fa-paper-plane"></i> Apply NOW / Đăng ký ngay</a>
-        </div>
-        
+        <div class="footer-links"><a href="#">Home</a><a href="#loans">Loan Programs</a><a href="#privacy">Privacy</a><a href="#disclaimer">Disclaimers</a><a href="#contact">Contact</a></div>
+        <div style="margin: 15px 0;"><a href="https://www.absoluteml.com/martin-nguyen" target="_blank" style="background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 10px 24px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem;"><i class="fas fa-paper-plane"></i> Apply NOW</a></div>
         <img src="logo.png" alt="Absolute Mortgage & Lending" class="footer-logo-img" onerror="this.style.display='none'">
-        
-        <div class="equal-housing" style="background: transparent; color: #b8d4e8; justify-content: center; margin: 0 auto 15px;">
-            <i class="fas fa-home"></i> Equal Housing Opportunity
-        </div>
+        <div class="equal-housing" style="margin: 0 auto 15px;"><i class="fas fa-home"></i> Equal Housing Opportunity</div>
         <p><strong>Martin Nguyen</strong> | NMLS #2684170 | Licensed in Texas</p>
         <p>Absolute Mortgage & Lending (DBA of AML FUNDING LLC) | NMLS #1910591</p>
         <p>4230 Lyndon B Johnson Fwy Ste 625 & 626, Dallas, TX 75244</p>
-        <div class="footer-nmls">
-            <p>NMLS Consumer Access: <a href="https://www.nmlsconsumeraccess.org" target="_blank">www.nmlsconsumeraccess.org</a></p>
-        </div>
+        <div class="footer-nmls"><p>NMLS Consumer Access: <a href="https://www.nmlsconsumeraccess.org" target="_blank">www.nmlsconsumeraccess.org</a></p></div>
     </div>
 </footer>
 
 <script>
-    function updateMonthly() {
-        let purchaseAmount = parseFloat(document.getElementById('purchaseAmount').value);
-        let downPayment = parseFloat(document.getElementById('downPayment').value);
-        let rate = parseFloat(document.getElementById('interestRate').value);
+    // Property tax rate database
+    const propertyTaxRates = {
+        "Harris": 1.80, "Dallas": 2.30, "Tarrant": 2.20, "Bexar": 2.10, "Travis": 1.90,
+        "Collin": 2.40, "Denton": 2.35, "Fort Bend": 2.15, "Montgomery": 2.25, "Williamson": 2.00,
+        "El Paso": 1.75, "Hidalgo": 2.05, "Other": 2.50
+    };
+    
+    const zipToCounty = {
+        "77001":"Harris","77002":"Harris","77003":"Harris","77004":"Harris","77005":"Harris",
+        "75201":"Dallas","75202":"Dallas","75203":"Dallas","75204":"Dallas","75205":"Dallas",
+        "76101":"Tarrant","76102":"Tarrant","76103":"Tarrant","76104":"Tarrant","76105":"Tarrant",
+        "78201":"Bexar","78202":"Bexar","78203":"Bexar","78204":"Bexar","78205":"Bexar",
+        "78701":"Travis","78702":"Travis","78703":"Travis","78704":"Travis","78705":"Travis",
+        "75001":"Collin","75002":"Collin","75009":"Collin","75010":"Collin","75011":"Collin",
+        "76201":"Denton","76202":"Denton","76203":"Denton","76204":"Denton","76205":"Denton",
+        "77401":"Fort Bend","77406":"Fort Bend","77407":"Fort Bend","77417":"Fort Bend","77418":"Fort Bend",
+        "77301":"Montgomery","77302":"Montgomery","77303":"Montgomery","77304":"Montgomery","77305":"Montgomery",
+        "78601":"Williamson","78602":"Williamson","78603":"Williamson","78604":"Williamson","78605":"Williamson",
+        "79901":"El Paso","79902":"El Paso","79903":"El Paso","79904":"El Paso","79905":"El Paso",
+        "78501":"Hidalgo","78502":"Hidalgo","78503":"Hidalgo","78504":"Hidalgo","78505":"Hidalgo"
+    };
+    
+    function getTaxRateFromCounty(selectedText) {
+        if (selectedText.includes("Harris")) return 1.80;
+        if (selectedText.includes("Dallas")) return 2.30;
+        if (selectedText.includes("Tarrant")) return 2.20;
+        if (selectedText.includes("Bexar")) return 2.10;
+        if (selectedText.includes("Travis")) return 1.90;
+        if (selectedText.includes("Collin")) return 2.40;
+        if (selectedText.includes("Denton")) return 2.35;
+        if (selectedText.includes("Fort Bend")) return 2.15;
+        if (selectedText.includes("Montgomery")) return 2.25;
+        if (selectedText.includes("Williamson")) return 2.00;
+        if (selectedText.includes("El Paso")) return 1.75;
+        if (selectedText.includes("Hidalgo")) return 2.05;
+        return 2.50;
+    }
+    
+    function updatePropertyTax() {
+        let purchaseAmount = parseFloat(document.getElementById('purchaseAmount').value) || 400000;
+        let taxRatePercent = 0;
+        let countySelect = document.getElementById('propertyCounty');
+        let selectedCounty = countySelect.options[countySelect.selectedIndex]?.text || "";
+        let zipCode = document.getElementById('propertyZip').value.trim();
         
+        if (selectedCounty && !selectedCounty.includes("Select County")) {
+            taxRatePercent = getTaxRateFromCounty(selectedCounty);
+            document.getElementById('propertyTaxDisplay').style.background = "#e8f5e9";
+        } else if (zipCode.length >= 3 && zipToCounty[zipCode.substring(0,5)]) {
+            let county = zipToCounty[zipCode.substring(0,5)];
+            taxRatePercent = propertyTaxRates[county];
+            document.getElementById('propertyTaxDisplay').style.background = "#e8f5e9";
+            for (let i = 0; i < countySelect.options.length; i++) {
+                if (countySelect.options[i].text.includes(county)) {
+                    countySelect.selectedIndex = i;
+                    break;
+                }
+            }
+        } else if (zipCode.length >= 3) {
+            taxRatePercent = 2.50;
+            document.getElementById('propertyTaxDisplay').style.background = "#fff3e0";
+        } else {
+            document.getElementById('propertyTaxDisplay').innerHTML = `📊 Property Tax Rate: -- | Select county or enter ZIP code`;
+            document.getElementById('propertyTaxDisplay').style.background = "#eef2fa";
+            document.getElementById('propertyTax').value = 0;
+            updateMonthly();
+            return;
+        }
+        
+        let annualTax = (purchaseAmount * taxRatePercent) / 100;
+        document.getElementById('propertyTax').value = Math.round(annualTax);
+        document.getElementById('propertyTaxDisplay').innerHTML = `📊 Property Tax Rate: ${taxRatePercent}% | Annual Tax: $${Math.round(annualTax).toLocaleString()}`;
+        updateMonthly();
+    }
+    
+    function updateMonthly() {
+        let purchaseAmount = parseFloat(document.getElementById('purchaseAmount').value) || 400000;
+        let downPayment = parseFloat(document.getElementById('downPayment').value) || 50000;
+        let rate = parseFloat(document.getElementById('interestRate').value) || 6.5;
+        let annualTax = parseFloat(document.getElementById('propertyTax').value) || 0;
+        let annualInsurance = parseFloat(document.getElementById('homeInsurance').value) || 1200;
         let selectedTerm = document.querySelector('input[name="loanTerm"]:checked');
         let years = selectedTerm ? parseInt(selectedTerm.value) : 30;
-        
-        if (isNaN(purchaseAmount)) purchaseAmount = 400000;
-        if (isNaN(downPayment)) downPayment = 50000;
-        if (isNaN(rate)) rate = 6.5;
+        let includeTax = document.getElementById('toggleTax').checked;
+        let includeInsurance = document.getElementById('toggleInsurance').checked;
         
         let loanAmount = purchaseAmount - downPayment;
         if (loanAmount < 0) loanAmount = 0;
-        
-        document.getElementById('loanInfoDisplay').innerHTML = `Loan Amount / Số tiền vay: $${loanAmount.toLocaleString()}`;
+        document.getElementById('loanInfoDisplay').innerHTML = `Loan Amount: $${loanAmount.toLocaleString()}`;
         
         const monthlyRate = rate / 100 / 12;
         const payments = years * 12;
-        let monthly = 0;
+        let monthlyPI = 0;
         
         if (loanAmount > 0 && monthlyRate > 0) {
-            monthly = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, payments)) / (Math.pow(1 + monthlyRate, payments) - 1);
-        } else if (loanAmount > 0 && monthlyRate === 0) {
-            monthly = loanAmount / payments;
-        } else {
-            monthly = 0;
+            monthlyPI = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, payments)) / (Math.pow(1 + monthlyRate, payments) - 1);
+        } else if (loanAmount > 0) {
+            monthlyPI = loanAmount / payments;
         }
         
-        if (!isFinite(monthly)) monthly = 0;
-        document.getElementById('monthlyDisplay').innerText = '$' + monthly.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        let monthlyTax = includeTax ? (annualTax / 12) : 0;
+        let monthlyInsurance = includeInsurance ? (annualInsurance / 12) : 0;
+        let totalMonthly = monthlyPI + monthlyTax + monthlyInsurance;
+        if (!isFinite(totalMonthly)) totalMonthly = 0;
+        
+        document.getElementById('monthlyDisplay').innerHTML = '$' + totalMonthly.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        
+        let breakdown = `P&I: $${Math.round(monthlyPI)}`;
+        if (includeTax) breakdown += ` + Tax: $${Math.round(monthlyTax)}`;
+        if (includeInsurance) breakdown += ` + Insurance: $${Math.round(monthlyInsurance)}`;
+        document.getElementById('paymentBreakdown').innerHTML = breakdown;
     }
     
-    document.getElementById('purchaseAmount').addEventListener('input', updateMonthly);
-    document.getElementById('downPayment').addEventListener('input', updateMonthly);
-    document.getElementById('interestRate').addEventListener('input', updateMonthly);
-    
-    document.querySelectorAll('input[name="loanTerm"]').forEach(radio => {
-        radio.addEventListener('change', updateMonthly);
+    // Toggle handlers
+    document.getElementById('toggleTax').addEventListener('change', function() {
+        let taxGroup = document.getElementById('taxInputGroup');
+        if (this.checked) {
+            taxGroup.classList.remove('disabled-input');
+        } else {
+            taxGroup.classList.add('disabled-input');
+        }
+        updateMonthly();
     });
     
-    updateMonthly();
+    document.getElementById('toggleInsurance').addEventListener('change', function() {
+        let insuranceGroup = document.getElementById('insuranceInputGroup');
+        if (this.checked) {
+            insuranceGroup.classList.remove('disabled-input');
+        } else {
+            insuranceGroup.classList.add('disabled-input');
+        }
+        updateMonthly();
+    });
+    
+    // Input event listeners
+    document.getElementById('purchaseAmount').addEventListener('input', function() { updatePropertyTax(); updateMonthly(); });
+    document.getElementById('downPayment').addEventListener('input', updateMonthly);
+    document.getElementById('interestRate').addEventListener('input', updateMonthly);
+    document.getElementById('propertyTax').addEventListener('input', updateMonthly);
+    document.getElementById('homeInsurance').addEventListener('input', updateMonthly);
+    document.getElementById('propertyCounty').addEventListener('change', updatePropertyTax);
+    document.getElementById('propertyZip').addEventListener('input', updatePropertyTax);
+    document.querySelectorAll('input[name="loanTerm"]').forEach(radio => radio.addEventListener('change', updateMonthly));
+    
+    // Initialize
+    updatePropertyTax();
 </script>
 
 <script type="application/ld+json">
@@ -1298,11 +1244,7 @@
   },
   "url": "https://www.absoluteml.com/martin-nguyen",
   "priceRange": "$$",
-  "openingHours": "Mo-Fr 09:00-18:00",
-  "brand": {
-    "@type": "Brand",
-    "name": "Absolute Mortgage & Lending"
-  }
+  "brand": { "@type": "Brand", "name": "Absolute Mortgage & Lending" }
 }
 </script>
 </body>
